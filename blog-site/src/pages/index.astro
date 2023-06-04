@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Layout.astro";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+const me = "/pixcel_me48.png";
+---
+
+<Layout>
+	<div id="profile">
+		<div>
+			<img class="mx-auto w-36 sm:w-48" src={me} alt="marogosteen" />
+			<h1 class="text-2xl sm:text-4xl font-bold my-3">Marogosteen</h1>
+			<p class="whitespace-normal text-md sm:text-xl my-3">
+				麻中に生じたかもしれない蓬エンジニア<br class="sm:hidden" /> 扶けずして直るかわからない
+			</p>
+			<div>
+				<a href="https://github.com/marogosteen">
+					<i class="bi bi-github mx-3" style="font-size:2rem"></i>
+				</a>
+				<a href="https://twitter.com/marogosteen">
+					<i class="bi bi-twitter mx-3" style="font-size:2rem"></i>
+				</a>
+				<a href="https://instagram.com/marogosteen/">
+					<i class="bi bi-instagram mx-3" style="font-size:2rem"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	#profile {
+		@apply text-center absolute inset-0 flex items-center justify-center;
+	}
+</style>

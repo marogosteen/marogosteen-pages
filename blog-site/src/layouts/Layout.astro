@@ -1,0 +1,33 @@
+---
+import { CONFIG } from "@config";
+import Header from "@components/Header.astro";
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{CONFIG.title}</title>
+    </head>
+    <body>
+        <div id="layout">
+            <Header />
+            <main>
+                <slot />
+            </main>
+        </div>
+    </body>
+</html>
+
+<style>
+    body {
+        @apply text-white bg-gradient-to-br from-zinc-900 to-slate-700;
+    }
+    #layout {
+        @apply min-h-screen flex flex-col mx-auto px-10 lg:max-w-5xl;
+    }
+    main {
+        @apply grow pt-6;
+    }
+</style>
