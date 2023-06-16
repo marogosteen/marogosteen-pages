@@ -1,6 +1,7 @@
 ---
 import { CONFIG } from "@config";
 import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -16,18 +17,19 @@ import Header from "@components/Header.astro";
             <main>
                 <slot />
             </main>
+            <Footer />
         </div>
     </body>
 </html>
 
 <style>
     body {
-        @apply text-white bg-gradient-to-br from-zinc-900 to-slate-700;
+        @apply text-gray-200 bg-gradient-to-br from-zinc-900 from-30% to-blue-950;
     }
     #layout {
         @apply min-h-screen flex flex-col mx-auto px-10 lg:max-w-5xl;
     }
     main {
-        @apply grow pt-6;
+        @apply grow;
     }
 </style>

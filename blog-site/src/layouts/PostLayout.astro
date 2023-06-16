@@ -1,0 +1,73 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+    title: string;
+    publicDate: string;
+    updateDate: string;
+}>;
+
+const { frontmatter } = Astro.props;
+
+function formatToDateString(dateString: string): string {
+    const date = new Date(dateString);
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+}
+
+const isShowUpdate = frontmatter.publicDate !== frontmatter.updateDate;
+
+const src = "/profile.jpg";
+---
+
+<div class="summary">
+    <h1 class="title">{frontmatter.title}</h1>
+    <div class="mt-5 text-gray-300 italic">
+        <p id="public">
+            release: {formatToDateString(frontmatter.publicDate)}
+        </p>
+        {
+            isShowUpdate && (
+                <p id="update">
+                    last update: {formatToDateString(frontmatter.updateDate)}
+                </p>
+            )
+        }
+    </div>
+</div>
+
+<article>
+    <slot />
+</article>
+
+<style>
+    .summary {
+        @apply my-28;
+    }
+    .title {
+        @apply text-3xl text-center font-bold;
+    }
+    article {
+        @apply mt-8 text-lg;
+    }
+    article :global(h2) {
+        @apply text-3xl my-8 font-semibold;
+    }
+    article :global(ol) {
+        @apply list-outside list-decimal;
+    }
+    article :global(ul) {
+        @apply list-outside list-disc;
+    }
+    article :global(li) {
+        @apply ms-10;
+    }
+    article :global(a) {
+        @apply underline underline-offset-auto;
+    }
+    article :global(img) {
+        @apply indent-0 rounded-xl w-10/12 my-10 mx-auto;
+    }
+    article :global(code) {
+        @apply text-white font-semibold bg-gray-700 rounded-lg px-3;
+    }
+</style>

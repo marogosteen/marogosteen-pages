@@ -2,22 +2,12 @@
 import { CONFIG } from "@config";
 ---
 
-<header class="sticky z-10 py-10">
+<header>
+    <a href="/" class="logo">
+        <h1>{CONFIG.title}</h1>
+    </a>
     <nav>
-        <a href="/" class="logo">
-            <h1>{CONFIG.title}</h1>
-        </a>
-        <div class="nav-items">
-            <a href="/posts" class="menu-item"> Posts</a>
-            <a href="/tags" class="menu-item"> Tags</a>
-        </div>
-        <button id="menu-button">hoge</button>
-        <!-- <button
-            class="hamburger-menu"
-            aria-label="Open Menu"
-            aria-expanded="false"
-            aria-controls="menu-items"
-        >
+        <button id="menu-button">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -36,46 +26,68 @@ import { CONFIG } from "@config";
                 <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
                 <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
             </svg>
-        </button> -->
+        </button>
+        <div id="menu" class="hidden">
+            <ul class="nav-item-list">
+                <li class="menu-item">
+                    <a href="/posts"> Posts</a>
+                </li>
+                <!-- <li class="menu-item">
+                    <a href="/tags"> Tags</a>
+                </li> -->
+            </ul>
+        </div>
     </nav>
 </header>
 
 <style>
-    nav {
-        @apply flex gap-x-12;
+    header {
+        @apply sticky z-10 flex my-10 md:flex;
     }
-    nav .nav-items {
-        @apply hidden sm:flex gap-x-12;
+    nav {
+        @apply flex w-full flex-col gap-x-12 mt-auto md:w-fit;
+    }
+
+    .logo {
+        @apply absolute grow text-2xl font-bold sm:text-3xl md:static;
+    }
+    .nav-item-list {
+        @apply flex flex-col gap-x-12 gap-y-4 bg-gray-800 py-8 my-5 rounded-3xl md:flex-row md:py-0 md:bg-inherit;
     }
     .menu-item {
-        @apply text-lg font-semibold leading-6;
+        @apply text-xl font-semibold text-center md:pt-0;
     }
-    .logo {
-        @apply grow text-2xl font-bold sm:text-3xl;
+    .menu-icon {
+        @apply inline-block w-9 h-9 stroke-current;
     }
+    .menu-icon line {
+        @apply transition-opacity duration-75 ease-in-out;
+    }
+    .menu-icon .close {
+        opacity: 0;
+    }
+    .menu-icon.is-active .line {
+        @apply opacity-0;
+    }
+    .menu-icon.is-active .close {
+        @apply opacity-100;
+    }
+
     #menu-button {
-        @apply sm:hidden bg-green-400 hover:bg-green-700;
+        @apply rounded-lg self-end md:hidden;
+    }
+    #menu {
+        @apply max-w-md w-full self-center md:flex;
     }
 </style>
 
 <script>
     const menuBtn = document.getElementById("menu-button");
-    // const menuBtn = document.querySelector(".hamburgermenu");
-    // const menuIcon = document.querySelector(".menu-icon");
-    //   const menuItems = document.querySelector("#menu-items");
+    const menuIcon = document.querySelector(".menu-icon");
+    const menu = document.getElementById("menu");
 
     menuBtn?.addEventListener("click", () => {
-        console.log("clicked");
+        menuIcon?.classList.toggle("is-active");
+        menu?.classList.toggle("hidden");
     });
-
-    // menuBtn?.addEventListener("click", () => {
-    //     const menuExpanded = menuBtn.getAttribute("aria-expanded") === "true";
-    //     menuIcon?.classList.toggle("is-active");
-    //     menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
-    //     menuBtn.setAttribute(
-    //         "aria-label",
-    //         menuExpanded ? "Open Menu" : "Close Menu"
-    //     );
-    //     // menuItems?.classList.toggle("display-none");
-    // });
 </script>

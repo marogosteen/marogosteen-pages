@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { title, postSlug, publicDate, description } = Astro.props.post.data;
+
+function dateToString(date: Date): string {
+    return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
+}
+---
+
+<li class="mt-10">
+    <a href={"posts/" + postSlug}>
+        <h3 class="text-2xl">{title}</h3>
+        <p>{dateToString(publicDate)}</p>
+        <p>{description}</p>
+    </a>
+</li>
+
+<style>
+    p {
+        @apply indent-4 text-gray-400;
+    }
+</style>

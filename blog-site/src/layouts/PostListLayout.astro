@@ -1,0 +1,12 @@
+---
+import Card from "@components/Card.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<h2 class="text-3xl font-bold">Posts</h2>
+<ol>
+    <!-- TODO: postが空の時 -->
+    {posts.map((post) => <Card post={post} />)}
+</ol>
