@@ -6,7 +6,7 @@ const posts = await getCollection("blog");
 ---
 
 <h2 class="text-3xl font-bold">Posts</h2>
-<ol>
+<ul>
     <!-- TODO: postが空の時 -->
     {posts.map((post) => <Card post={post} />)}
-</ol>
+</ul>
