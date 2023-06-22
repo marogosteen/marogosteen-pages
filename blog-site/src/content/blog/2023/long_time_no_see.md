@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/PostLayout.astro"
+layout: "@layouts/PostDetailLayout.astro"
 title: "気づいたら就職してました。"
 publicDate: 2023-06-21
 updateDate: 2023-06-21
