@@ -8,7 +8,7 @@ export interface Props {
 const { title, postSlug, publicDate, description } = Astro.props.post.data;
 
 function dateToString(date: Date): string {
-    return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
 ---
 
