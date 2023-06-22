@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/PostDetailLayout.astro"
+layout: "@layouts/PostDetail.astro"
 title: "Hello world"
 publicDate: 2022-10-07
 updateDate: 2022-10-07

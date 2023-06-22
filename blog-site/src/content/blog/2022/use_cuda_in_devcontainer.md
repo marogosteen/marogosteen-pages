@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/PostDetailLayout.astro"
+layout: "@layouts/PostDetail.astro"
 title: "VSCode Dev Containers で CUDA を使った話"
 publicDate: 2022-10-08
 updateDate: 2022-10-08
