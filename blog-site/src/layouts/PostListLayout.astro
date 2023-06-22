@@ -2,7 +2,15 @@
 import Card from "@components/Card.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("blog");
+let posts = await getCollection("blog");
+
+posts = posts
+    .filter(({ data }) => !data.draft)
+    .sort(
+        (a, b) =>
+            Math.floor(new Date(b.data.publicDate).getTime() / 1000) -
+            Math.floor(new Date(a.data.publicDate).getTime() / 1000)
+    );
 ---
 
 <h2 class="text-3xl font-bold">Posts</h2>

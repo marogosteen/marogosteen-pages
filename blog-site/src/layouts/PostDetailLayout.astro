@@ -47,19 +47,22 @@ const src = "/profile.jpg";
         @apply text-3xl text-center font-bold;
     }
     article {
-        @apply mt-8 text-lg;
+        @apply mt-8 text-lg break-words;
     }
     article :global(h2) {
         @apply text-3xl my-8 font-semibold;
     }
+    article :global(h3) {
+        @apply font-semibold my-2;
+    }
     article :global(ol) {
-        @apply list-outside list-decimal;
+        @apply list-outside list-decimal my-5;
     }
     article :global(ul) {
-        @apply list-outside list-disc;
+        @apply list-outside list-disc my-5;
     }
     article :global(li) {
-        @apply ms-10;
+        @apply ms-10 my-4;
     }
     article :global(a) {
         @apply underline underline-offset-auto;
