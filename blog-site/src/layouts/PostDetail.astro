@@ -56,13 +56,16 @@ const src = "/profile.jpg";
         @apply font-semibold my-2;
     }
     article :global(ol) {
-        @apply list-outside list-decimal my-5;
+        @apply list-outside list-decimal my-5 ms-2.5;
     }
     article :global(ul) {
-        @apply list-outside list-disc my-5;
+        @apply list-outside list-disc my-5 ms-5;
     }
     article :global(li) {
-        @apply ms-10 my-5;
+        @apply my-5;
+    }
+    article :global(li > p) {
+        @apply ms-5;
     }
     article :global(a) {
         @apply underline underline-offset-auto;

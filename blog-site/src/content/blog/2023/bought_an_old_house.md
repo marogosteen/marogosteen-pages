@@ -5,6 +5,7 @@ publicDate: 2023-06-23
 updateDate: 2023-06-23
 postSlug: "20230616-Im-kominka-engineer"
 tags: 
+    - "古民家"
     - "雑記"
 description: "フルリモートワークの仕事に就職したので、 古民家を買って友達と移住して古民家エンジニアへと進化した。"
 draft: false

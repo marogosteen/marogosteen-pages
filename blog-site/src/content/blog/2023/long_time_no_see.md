@@ -5,7 +5,7 @@ publicDate: 2023-06-21
 updateDate: 2023-06-21
 postSlug: "20230616-long_time_no_see"
 tags: 
-    - "雑記"
+    - "就職"
 description: "最後に投稿したのは去年の10月。８ヶ月もブログをほったらかして、気づいたら就職していた。"
 draft: false
 ---

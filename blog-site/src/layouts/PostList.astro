@@ -7,8 +7,7 @@ let posts = await getCollection("blog");
 posts = sortedPosts(posts);
 ---
 
-<h2 class="text-3xl font-bold">Posts</h2>
+<h2 class="text-5xl font-bold my-10">Posts</h2>
 <ul>
-    <!-- TODO: postが空の時 -->
     {posts.map((post) => <Card post={post} />)}
 </ul>

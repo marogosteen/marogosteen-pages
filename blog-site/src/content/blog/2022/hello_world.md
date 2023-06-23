@@ -5,6 +5,8 @@ publicDate: 2022-10-07
 updateDate: 2022-10-07
 postSlug: "20221007-hello-world"
 description: "はじめの第一歩"
+tags:
+    - "雑記"
 draft: false
 ---
 

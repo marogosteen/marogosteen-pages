@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import uniqueTags from "@utils/uniqueTags";
+
+const posts = await getCollection("blog");
+const tags = uniqueTags(posts);
+---
+
+<h2 class="text-5xl font-bold my-10">Tags</h2>
+
+{
+    Array.from(tags.keys()).map((tagName) => (
+        <a href="#_" class="tag-badge">
+            <span class="tag-badge-under" />
+            <span class="tag-badge-top">
+                <span class="tag-name">
+                    # {tagName} <sup class="tag-count">{tags.get(tagName)}</sup>
+                </span>
+            </span>
+        </a>
+    ))
+}
+
+<style>
+    .tag-badge {
+        @apply relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden rounded-md m-5;
+    }
+    .tag-badge-under {
+        @apply w-full h-full bg-gradient-to-br from-orange-600 to-rose-600 absolute;
+    }
+    .tag-badge-top {
+        @apply relative px-6 py-3 transition-all ease-out bg-slate-900 rounded-md hover:bg-opacity-0;
+    }
+    .tag-name {
+        @apply text-lg text-white;
+    }
+    .tag-count {
+        @apply font-extrabold text-base;
+    }
+</style>
