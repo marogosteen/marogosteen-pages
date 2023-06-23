@@ -6,46 +6,13 @@ type Props = MarkdownLayoutProps<{
     publicDate: string;
     updateDate: string;
 }>;
-
-const { frontmatter } = Astro.props;
-
-function formatToDateString(dateString: string): string {
-    const date = new Date(dateString);
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-}
-
-const isShowUpdate = frontmatter.publicDate !== frontmatter.updateDate;
-
-const src = "/profile.jpg";
 ---
-
-<div class="summary">
-    <h1 class="title">{frontmatter.title}</h1>
-    <div class="mt-5 text-gray-300 italic">
-        <p id="public">
-            release: {formatToDateString(frontmatter.publicDate)}
-        </p>
-        {
-            isShowUpdate && (
-                <p id="update">
-                    last update: {formatToDateString(frontmatter.updateDate)}
-                </p>
-            )
-        }
-    </div>
-</div>
 
 <article>
     <slot />
 </article>
 
 <style>
-    .summary {
-        @apply my-28;
-    }
-    .title {
-        @apply text-3xl text-center font-bold;
-    }
     article {
         @apply mt-8 text-lg break-words;
     }

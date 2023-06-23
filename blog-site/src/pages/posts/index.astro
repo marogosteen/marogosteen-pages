@@ -1,8 +1,16 @@
 ---
 import Layout from "@layouts/Base.astro";
-import PostList from "@layouts/PostList.astro";
+import Card from "@components/Card.astro";
+import { getCollection } from "astro:content";
+import sortedPosts from "@utils/sortedPosts";
+
+let posts = await getCollection("blog");
+posts = sortedPosts(posts);
 ---
 
 <Layout>
-    <PostList />
+    <h2 class="text-5xl font-bold my-10">Posts</h2>
+    <ul>
+        {posts.map((post) => <Card post={post} />)}
+    </ul>
 </Layout>

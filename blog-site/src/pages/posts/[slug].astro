@@ -16,10 +16,42 @@ export async function getStaticPaths() {
     return [...postResult];
 }
 
+function dateToString(date: Date): string {
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+}
+
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+const isShowUpdate = post.data.publicDate !== post.data.updateDate;
+const publicDate = dateToString(post.data.publicDate)
+const updateDate = dateToString(post.data.updateDate)
 ---
 
 <Layout>
+    <div class="summary">
+        <h1 class="title">{post.data.title}</h1>
+        <div class="mt-5 text-gray-300 italic">
+            <p id="public">
+                release: {publicDate}
+            </p>
+            {
+                isShowUpdate && (
+                    <p id="update">
+                        last update: {updateDate}
+                    </p>
+                )
+            }
+        </div>
+    </div>
     <Content />
 </Layout>
+
+<style>
+    .summary {
+        @apply my-28;
+    }
+    .title {
+        @apply text-3xl text-center font-bold;
+    }
+</style>
