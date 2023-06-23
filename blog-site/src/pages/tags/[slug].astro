@@ -3,6 +3,7 @@ import Layout from "@layouts/Base.astro";
 import Card from "@components/Card.astro";
 import { CollectionEntry, getCollection } from "astro:content";
 import uniqueTags from "@utils/uniqueTags";
+import sortedPosts from "@utils/sortedPosts";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -24,7 +25,8 @@ export interface Props {
     tagName: string;
 }
 
-const { posts, tagName } = Astro.props;
+let { posts, tagName } = Astro.props;
+posts = sortedPosts(posts);
 ---
 
 <Layout>
