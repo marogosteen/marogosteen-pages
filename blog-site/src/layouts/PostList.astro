@@ -1,16 +1,10 @@
 ---
 import Card from "@components/Card.astro";
 import { getCollection } from "astro:content";
+import sortedPosts from "@utils/sortedPosts";
 
 let posts = await getCollection("blog");
-
-posts = posts
-    .filter(({ data }) => !data.draft)
-    .sort(
-        (a, b) =>
-            Math.floor(new Date(b.data.publicDate).getTime() / 1000) -
-            Math.floor(new Date(a.data.publicDate).getTime() / 1000)
-    );
+posts = sortedPosts(posts);
 ---
 
 <h2 class="text-3xl font-bold">Posts</h2>
