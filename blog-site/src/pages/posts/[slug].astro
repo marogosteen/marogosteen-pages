@@ -24,8 +24,8 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 const isShowUpdate = post.data.publicDate !== post.data.updateDate;
-const publicDate = dateToString(post.data.publicDate)
-const updateDate = dateToString(post.data.updateDate)
+const publicDate = dateToString(post.data.publicDate);
+const updateDate = dateToString(post.data.updateDate);
 ---
 
 <Layout>
@@ -35,13 +35,7 @@ const updateDate = dateToString(post.data.updateDate)
             <p id="public">
                 release: {publicDate}
             </p>
-            {
-                isShowUpdate && (
-                    <p id="update">
-                        last update: {updateDate}
-                    </p>
-                )
-            }
+            {isShowUpdate && <p id="update">last update: {updateDate}</p>}
         </div>
     </div>
     <Content />

@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Base.astro";
+import Card from "@components/Card.astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import uniqueTags from "@utils/uniqueTags";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog", ({ data }) => !data.draft);
+    const tags = uniqueTags(posts);
+    const tagResult = Array.from(tags.keys()).map((tagName) => ({
+        params: { slug: tagName },
+        props: {
+            posts: posts.filter((post) => {
+                return post.data.tags.includes(tagName);
+            }),
+            tagName: tagName
+        },
+    }));
+    return [...tagResult];
+}
+
+export interface Props {
+    posts: CollectionEntry<"blog">[];
+    tagName: string;
+}
+
+const { posts, tagName } = Astro.props;
+---
+
+<Layout>
+    <h2 class="text-5xl font-bold my-10">{tagName}</h2>
+    <ul>
+        {posts.map((post) => <Card post={post} />)}
+    </ul>
+</Layout>
