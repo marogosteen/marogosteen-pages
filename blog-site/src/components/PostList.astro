@@ -10,7 +10,7 @@ export interface Props {
 const { title, posts } = Astro.props;
 ---
 
-<h2 class="text-5xl font-bold my-10">{title}</h2>
+<h2 class="text-3xl font-bold my-10 sm:text-5xl">{title}</h2>
 <ul>
     {posts.map((post) => <Card post={post} />)}
 </ul>
