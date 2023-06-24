@@ -2,12 +2,12 @@
 import Layout from "@layouts/Base.astro";
 import PostList from "@components/PostList.astro";
 import { CollectionEntry, getCollection } from "astro:content";
-import uniqueTags from "@utils/uniqueTags";
-import sortedPosts from "@utils/sortedPosts";
+import getTagCountMap from "@utils/getUniqueTags";
+import getSortedPosts from "@utils/getSortedPosts";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog", ({ data }) => !data.draft);
-    const tags = uniqueTags(posts);
+    const tags = getTagCountMap(posts);
     const tagResult = Array.from(tags.keys()).map((tagName) => ({
         params: { slug: tagName },
         props: {
@@ -26,7 +26,7 @@ export interface Props {
 }
 
 let { posts, tagName } = Astro.props;
-posts = sortedPosts(posts);
+posts = getSortedPosts(posts);
 ---
 
 <Layout>

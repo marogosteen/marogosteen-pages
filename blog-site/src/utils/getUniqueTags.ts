@@ -1,6 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 
-const uniqueTags = (posts: CollectionEntry<"blog">[]) => {
+const getTagCountMap = (posts: CollectionEntry<"blog">[]) => {
     let tags: Map<string, number> = new Map<string, number>();
     posts.forEach(({ data }) => {
         if (!data.draft) {
@@ -13,4 +13,4 @@ const uniqueTags = (posts: CollectionEntry<"blog">[]) => {
     return tags
 }
 
-export default uniqueTags;
+export default getTagCountMap;

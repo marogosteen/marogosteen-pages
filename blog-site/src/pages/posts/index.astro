@@ -2,10 +2,10 @@
 import Layout from "@layouts/Base.astro";
 import PostList from "@components/PostList.astro";
 import { getCollection } from "astro:content";
-import sortedPosts from "@utils/sortedPosts";
+import getSortedPosts from "@utils/getSortedPosts";
 
 let posts = await getCollection("blog");
-posts = sortedPosts(posts);
+posts = getSortedPosts(posts);
 ---
 
 <Layout>
