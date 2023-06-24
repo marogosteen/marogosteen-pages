@@ -1,0 +1,16 @@
+---
+import Card from "@components/Card.astro";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+    title: string;
+    posts: CollectionEntry<"blog">[];
+}
+
+const { title, posts } = Astro.props;
+---
+
+<h2 class="text-5xl font-bold my-10">{title}</h2>
+<ul>
+    {posts.map((post) => <Card post={post} />)}
+</ul>

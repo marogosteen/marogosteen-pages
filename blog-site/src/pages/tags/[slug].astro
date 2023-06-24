@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Base.astro";
-import Card from "@components/Card.astro";
+import PostList from "@components/PostList.astro";
 import { CollectionEntry, getCollection } from "astro:content";
 import uniqueTags from "@utils/uniqueTags";
 import sortedPosts from "@utils/sortedPosts";
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
             posts: posts.filter((post) => {
                 return post.data.tags.includes(tagName);
             }),
-            tagName: tagName
+            tagName: tagName,
         },
     }));
     return [...tagResult];
@@ -30,8 +30,5 @@ posts = sortedPosts(posts);
 ---
 
 <Layout>
-    <h2 class="text-5xl font-bold my-10">{tagName}</h2>
-    <ul>
-        {posts.map((post) => <Card post={post} />)}
-    </ul>
+    <PostList title={tagName} posts={posts} />
 </Layout>
