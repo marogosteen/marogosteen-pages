@@ -16,4 +16,4 @@ draft: false
 
 技術ブログを始めようと思いつつかなり時が経ってしまったが、残す大切さを感じてようやく最初の一歩を踏み出してみる。
 
-![profile](https://storage.cloud.google.com/marogosteen-pages-storage/2022/awaji_drone.png?authuser=1)
+![profile](https://storage.googleapis.com/marogosteen-pages-storage/2022/awaji_drone.png)

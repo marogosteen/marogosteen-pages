@@ -30,13 +30,13 @@ Dev Containers は凄く便利なので、使ってない人は是非。
 ## nvidia-smi で動作確認
 
 1. Containerを作る前に、ローカルの環境で `nvidia-smi` が使えることを確認する。
-    ![nvidia_smi](https://storage.cloud.google.com/marogosteen-pages-storage/2022/win_nvidiasmi.png?authuser=1)
+    ![nvidia_smi](https://storage.googleapis.com/marogosteen-pages-storage/2022/win_nvidiasmi.png)
     こんな感じのが出たらOK。
 
 ## Containerを作る
 
 1. 作業ディレクトリを開いて、リモートエクスプローラーからOpen Current Folder in Containerを選択。
-    ![create_container](https://storage.cloud.google.com/marogosteen-pages-storage/2022/create_container.png?authuser=1)
+    ![create_container](https://storage.googleapis.com/marogosteen-pages-storage/2022/create_container.png)
 
     Ubuntu の次に Python(latest) を選択すると Container が作られる（ちょっと時間かかる)。
 
@@ -45,16 +45,16 @@ Dev Containers は凄く便利なので、使ってない人は是非。
     デフォルトでは動作確認で使用した `nvidia-smi` が見つからず、 CUDA が使えないはず。Docker は GPU を使用する場合に `docker run` の引数で指定する必要がある。
 
     devcontainer.json で runArgs の設定を変更する。
-    ![set_run_args](https://storage.cloud.google.com/marogosteen-pages-storage/2022/runargs.png?authuser=1)
+    ![set_run_args](https://storage.googleapis.com/marogosteen-pages-storage/2022/runargs.png)
 
 
 3. 左下からリモートウィンドウを開いて container を rebuild。
-    ![rebuild_devcontainer](https://storage.cloud.google.com/marogosteen-pages-storage/2022/rebuild.png?authuser=1)
+    ![rebuild_devcontainer](https://storage.googleapis.com/marogosteen-pages-storage/2022/rebuild.png)
 
 4. nvidia-smi で再度確認。
     - nvidia-smi
 
-    ![check_build_devcontainer](https://storage.cloud.google.com/marogosteen-pages-storage/2022/check_build_devcontainer.png?authuser=1)
+    ![check_build_devcontainer](https://storage.googleapis.com/marogosteen-pages-storage/2022/check_build_devcontainer.png)
 
 
 ## 参考
