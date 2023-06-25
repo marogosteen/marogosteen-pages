@@ -12,9 +12,9 @@ draft: false
 
 ## remake 後の構成
 
-この blog の構成は以下の通り。[repository](https://github.com/marogosteen/marogosteen-pages)
+この blog の構成は以下の通り。<br>[source](https://github.com/marogosteen/marogosteen-pages)
 |||
-|:-|:-|
+|-|-|
 |SSG|Astro|
 |Hosting|Firebase|
 |Data Lake|Google Cloud Storage|
@@ -22,15 +22,15 @@ draft: false
 ## Hugo から Astro へ
 
 2022の[初めての投稿](https://marogosteen-pages.web.app/posts/20221007-hello-world/)をした頃は Hugo を使って SSG していた。
-Hugo は Thema を使えて Markdown で記事を書くだけでよく、手頃で良かった。ちなみに、 Thema は[PaperMod](https://adityatelange.github.io/hugo-PaperMod/)を使ってた。ちなみにちなみに Hugo だけでなく Next.js とか Astro でもできる。
+Hugo は Thema を使えて Markdown で記事を書くだけでよく、手頃で良かった。ちなみに、 Thema は [PaperMod](https://adityatelange.github.io/hugo-PaperMod/) を使ってた。ちなみにちなみに Hugo だけでなく Next.js とか Astro でもできる。
 
-PaperMod は結構人気で、バッタリ PaperMod を使った blog に出くわす。それが嫌で、 　Thema　を使わない　SSG　してみようと思い　Astro　を選択した。なぜ　Astro　なのかって？ feeling さ。
+PaperMod は結構人気で、バッタリ PaperMod を使った blog に出くわす。それが嫌で、 Thema を使わない SSG してみようと思い Astro を選択した。なぜ Astro なのかって？ feeling さ。
 
-feelingは半分冗談で、もう半分はシンプルに最近のTwitterとかでちょくちょく見てて「人気なのかな？」と気になってた。
+feeling は半分冗談で、もう半分はシンプルに最近の Twitter とかでちょくちょく見てて「人気なのかな？」と気になってた。
 
 ## わざわざ自分で書いたわけ
 
-blog が欲しいならHatenaでいいと思う。マジで。自分で書く必要はない。
+blog が欲しいなら Hatena でいいと思う。マジで。自分で書く必要はない。
 
 ちなみに3月くらいからしてた SvelteKit の勉強も含めると最初のホストまでに２ヶ月くらいかかってる。平日は仕事してるし単純な２ヶ月ではないけども、わざわざ書く必要はない。
 
@@ -45,11 +45,11 @@ blog が欲しいならHatenaでいいと思う。マジで。自分で書く必
 
 僕は手を動かなさないと経験値にならないので、どうせならば勉強ついでに blog を書こうと思ったのだった。
 
-普段しないデザインのアイデア拾いに行ったり、Tailwindcss使ってみたり、普段書かないTS触ったり、四苦八苦したのが楽しかった。いい経験にもなったと思う。
+普段しないデザインのアイデア拾いに行ったり、 Tailwindcss 使ってみたり、普段書かないTS触ったり、四苦八苦したのが楽しかった。いい経験にもなったと思う。
 
 次は何作ろう。
 
-## 残っていること。
+## 残っていること
 
 - pagenation
 
@@ -61,4 +61,4 @@ blog が欲しいならHatenaでいいと思う。マジで。自分で書く必
 
 ## 最後に
 
-何かあれば修正依頼や質問なら[Github Issue](https://github.com/marogosteen/marogosteen-pages/issues)か[Twitter DM](https://twitter.com/marogosteen)にご連絡ください。
+修正依頼や質問なら[Github Issue](https://github.com/marogosteen/marogosteen-pages/issues)か[Twitter DM](https://twitter.com/marogosteen)にご連絡ください。

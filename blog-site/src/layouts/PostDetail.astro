@@ -47,7 +47,13 @@ type Props = MarkdownLayoutProps<{
         @apply text-white font-semibold bg-gray-700 rounded-lg px-3;
     }
     article :global(table) {
-        @apply flex justify-center items-center table-auto rounded-lg border-2;
+        @apply mx-auto my-10 text-sm sm:text-base;
+    }
+    article :global(tr) {
+        @apply border-b border-gray-500;
+    }
+    article :global(td) {
+        @apply py-5 px-5 ;
     }
     article :global(tbody) {
         @apply grow;
