@@ -5,7 +5,8 @@ export interface Props {
     post: CollectionEntry<"blog">;
 }
 
-const { title, postSlug, publicDate, description } = Astro.props.post.data;
+const { title, postSlug, publicDate, description, tags } =
+    Astro.props.post.data;
 
 function dateToString(date: Date): string {
     return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -32,6 +33,13 @@ function dateToString(date: Date): string {
                 <span class="date-string">{dateToString(publicDate)}</span>
             </div>
             <p>{description}</p>
+            {
+                tags.map((tag) => (
+                    <a href={"/tags/"+tag}>
+                        <span class="me-2">#{tag}</span>
+                    </a>
+                ))
+            }
         </div>
     </a>
 </li>

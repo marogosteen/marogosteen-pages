@@ -36,6 +36,7 @@ const isShowUpdate = publicDate !== updateDate;
                 release: {publicDate}
             </p>
             {isShowUpdate && <p id="update">last update: {updateDate}</p>}
+            {post.data.tags.map((tag) => <a href={"/tags/"+tag}><span class="me-2">#{tag}</span></a>)}
         </div>
     </div>
     <Content />
