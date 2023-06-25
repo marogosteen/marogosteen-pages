@@ -17,7 +17,7 @@ type Props = MarkdownLayoutProps<{
         @apply mt-8 text-sm break-words sm:text-lg;
     }
     article :global(h2) {
-        @apply text-3xl mb-4 mt-16 font-semibold;
+        @apply text-xl mb-4 mt-16 font-semibold sm:text-3xl;
     }
     article :global(h3) {
         @apply font-semibold my-2;
@@ -45,5 +45,11 @@ type Props = MarkdownLayoutProps<{
     }
     article :global(code) {
         @apply text-white font-semibold bg-gray-700 rounded-lg px-3;
+    }
+    article :global(table) {
+        @apply flex justify-center items-center table-auto rounded-lg border-2;
+    }
+    article :global(tbody) {
+        @apply grow;
     }
 </style>
