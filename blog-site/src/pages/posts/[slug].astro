@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Base.astro";
 import { CollectionEntry, getCollection } from "astro:content";
+import dateToString from "@utils/dateToString";
 
 export interface Props {
     post: CollectionEntry<"blog">;
@@ -14,10 +15,6 @@ export async function getStaticPaths() {
     }));
 
     return [...postResult];
-}
-
-function dateToString(date: Date): string {
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
 
 const { post } = Astro.props;

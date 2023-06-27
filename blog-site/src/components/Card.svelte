@@ -1,17 +1,11 @@
----
-import type { CollectionEntry } from "astro:content";
+<script lang="ts">
+    import type { CollectionEntry } from "astro:content";
+    import dateToString from "@utils/dateToString";
 
-export interface Props {
-    post: CollectionEntry<"blog">;
-}
+    export let post: CollectionEntry<"blog">;
 
-const { title, postSlug, publicDate, description, tags } =
-    Astro.props.post.data;
-
-function dateToString(date: Date): string {
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-}
----
+    const { title, postSlug, publicDate, description, tags } = post.data;
+</script>
 
 <li class="mb-10">
     <a href={"/posts/" + postSlug}>
@@ -28,24 +22,18 @@ function dateToString(date: Date): string {
                 >
                     <path
                         d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
-                    ></path>
+                    />
                 </svg>
-                <span class="date-string">{dateToString(publicDate)}</span>
+                <span class="items-center justify-center mx-4"
+                    >{dateToString(publicDate)}</span
+                >
             </div>
             <p>{description}</p>
-            {
-                tags.map((tag) => (
-                    <a href={"/tags/"+tag}>
-                        <span class="me-2">#{tag}</span>
-                    </a>
-                ))
-            }
+            {#each tags as tag}
+                <a href={"/tags/" + tag}>
+                    <span class="me-2">#{tag}</span>
+                </a>
+            {/each}
         </div>
     </a>
 </li>
-
-<style>
-    .date-string {
-        @apply items-center justify-center mx-4;
-    }
-</style>
