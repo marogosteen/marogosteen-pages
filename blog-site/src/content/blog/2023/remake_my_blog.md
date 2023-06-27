@@ -6,9 +6,16 @@ updateDate: 2023-06-25
 postSlug: "20230621-remake_my_blog"
 tags:
     - "Astro"
+    - "雑記"
 description: "こっそりblogをHugoからAstroへ乗り換えてみた。"
 draft: false
 ---
+
+## はじめに
+
+本記事では、Hugo（Thema）から自分で書いたAstroに乗り換えたってだけで、Astroの使い方を示したものではありません。
+
+それはまた別で書きます。
 
 ## remake 後の構成
 
@@ -45,6 +52,8 @@ feeling は半分冗談で、もう半分はシンプルに最近の Twitter と
     なので当然早い。って言ってる。
 
 というわけで、 Gmail みたいなサービスには向かないけど、 blog みたいな静的サービスには向いている。
+
+「爆速でAstroを使ったblogをFirebaseに公開してみた！」は、いつか別で書きます。
 
 ## わざわざ自分で書いたわけ
 

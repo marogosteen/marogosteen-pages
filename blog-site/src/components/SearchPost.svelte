@@ -7,11 +7,12 @@
     let searchResult: CollectionEntry<"blog">[] = [];
 
     const searchHandler = () => {
+        let lq = query.toLowerCase();
         searchResult = allPosts.filter((post) => {
             return (
-                post.data.title.includes(query) ||
-                post.data.description.includes(query) ||
-                post.body.includes(query)
+                post.data.title.toLowerCase().includes(lq) ||
+                post.data.description.toLowerCase().includes(lq) ||
+                post.body.toLowerCase().includes(lq)
             );
         });
     };
