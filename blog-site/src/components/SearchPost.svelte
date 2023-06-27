@@ -18,7 +18,7 @@
     };
 </script>
 
-<div class="flex justify-center my-10">
+<div class="flex flex-col justify-center my-10 sm:flex-row">
     <label for="search-box" class="text-3xl font-bold my-auto me-4">Search: </label>
 
     <input
