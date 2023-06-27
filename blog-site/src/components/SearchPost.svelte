@@ -17,14 +17,16 @@
     };
 </script>
 
-<input
-    type="text"
-    placeholder=" Search..."
-    on:change={searchHandler}
-    bind:value={query}
-    class="input rounded-lg py-2 text-xl bg-gray-500"
-/>
+<div class="flex justify-center my-10">
+    <label for="search-box" class="text-3xl font-bold my-auto me-4">Search: </label>
 
-<p>forcus 設定したい</p>
+    <input
+        id="search-box"
+        type="text"
+        on:change={searchHandler}
+        bind:value={query}
+        class="input rounded-lg py-2 bg-gray-500 w-full text-lg px-5"
+    />
+</div>
 
-<PostList title={"Search: " + query} posts={searchResult} />
+<PostList title={""} posts={searchResult} />
