@@ -3,7 +3,6 @@ import Layout from "@layouts/Base.astro";
 import PostList from "@components/PostList.svelte";
 import { CollectionEntry, getCollection } from "astro:content";
 import getTagCountMap from "@utils/getUniqueTags";
-import getSortedPosts from "@utils/getSortedPosts";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -26,7 +25,6 @@ export interface Props {
 }
 
 let { posts, tagName } = Astro.props;
-posts = getSortedPosts(posts);
 ---
 
 <Layout>
