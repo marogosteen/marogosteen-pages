@@ -1,8 +1,8 @@
 ---
 layout: "@layouts/PostDetail.astro"
 title: "Astro + Svelteで検索機能追加した。"
-publicDate: 2023-06-26
-updateDate: 2023-06-26
+publicDate: 2023-06-27
+updateDate: 2023-06-27
 postSlug: "20230621-add_search_feature"
 tags:
     - "Astro"

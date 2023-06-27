@@ -46,6 +46,12 @@ type Props = MarkdownLayoutProps<{
     article :global(code) {
         @apply text-white font-semibold bg-gray-700 rounded-lg px-3;
     }
+    article :global(pre) {
+        @apply px-5 py-5 my-10 rounded-lg;
+    }
+    article :global(pre > code) {
+        @apply bg-opacity-0 px-0;
+    }
     article :global(table) {
         @apply mx-auto my-10 text-sm sm:text-base;
     }
@@ -53,7 +59,7 @@ type Props = MarkdownLayoutProps<{
         @apply border-b border-gray-500;
     }
     article :global(td) {
-        @apply py-5 px-5 ;
+        @apply py-5 px-5;
     }
     article :global(tbody) {
         @apply grow;
