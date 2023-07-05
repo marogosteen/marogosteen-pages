@@ -9,7 +9,7 @@
 
     allPosts = getSortedPosts(allPosts);
     const pagerDisplayMaxSize = 7;
-    const cardDisplay = 5;
+    const cardDisplay = 16;
     const pageTotal =
         allPosts.length % cardDisplay > 0
             ? Math.floor(allPosts.length / cardDisplay) + 1
@@ -25,7 +25,6 @@
     };
 
     const paginationHandler = (page: number) => {
-        alert("click");
         currentPage = page;
         paginationPages = getPager(currentPage, pageTotal);
         const start = currentPage * cardDisplay;
