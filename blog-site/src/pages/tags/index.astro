@@ -8,21 +8,22 @@ const tags = getTagCountMap(posts);
 ---
 
 <Layout>
-    <h2 class="text-3xl font-bold my-10">Tags</h2>
-
-    {
-        Array.from(tags.keys()).map((tagName) => (
-            <a href={"/tags/" + tagName} class="tag-badge">
-                <span class="tag-badge-under" />
-                <span class="tag-badge-top">
-                    <span class="tag-name">
-                        # {tagName}{" "}
-                        <sup class="tag-count">{tags.get(tagName)}</sup>
+    <div>
+        <h2 class="text-3xl font-bold my-10">Tags</h2>
+        {
+            Array.from(tags.keys()).map((tagName) => (
+                <a href={"/tags/" + tagName} class="tag-badge">
+                    <span class="tag-badge-under" />
+                    <span class="tag-badge-top">
+                        <span class="tag-name">
+                            # {tagName}{" "}
+                            <sup class="tag-count">{tags.get(tagName)}</sup>
+                        </span>
                     </span>
-                </span>
-            </a>
-        ))
-    }
+                </a>
+            ))
+        }
+    </div>
 </Layout>
 
 <style>

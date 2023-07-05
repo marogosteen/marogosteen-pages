@@ -18,16 +18,20 @@
     };
 </script>
 
-<div class="flex flex-col justify-center my-10 sm:flex-row">
-    <label for="search-box" class="text-3xl font-bold my-auto me-4">Search: </label>
+<div class="w-full">
+    <div class="w-full flex flex-row justify-center my-10 sm:flex-row">
+        <label for="search-box" class="text-3xl font-bold my-auto me-4"
+            >Search:
+        </label>
 
-    <input
-        id="search-box"
-        type="text"
-        on:change={searchHandler}
-        bind:value={query}
-        class="input rounded-lg py-2 bg-gray-500 w-full text-lg px-5"
-    />
+        <input
+            id="search-box"
+            type="text"
+            on:change={searchHandler}
+            bind:value={query}
+            class="input rounded-lg py-2 bg-gray-500 w-full text-lg px-5"
+        />
+    </div>
+    <PostList title={""} allPosts={searchResult} />
 </div>
 
-<PostList title={""} allPosts={searchResult} />

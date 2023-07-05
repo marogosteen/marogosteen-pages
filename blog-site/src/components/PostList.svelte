@@ -40,6 +40,8 @@
 </script>
 
 <div class="flex flex-col w-full">
+    <p>{allPosts.length}</p>
+    <p>{displayPosts.length}</p>
     <h2 class="text-3xl font-bold my-10">{title}</h2>
     <div class="join flex justify-center">
         {#each paginationPages as page}
