@@ -30,4 +30,4 @@
     />
 </div>
 
-<PostList title={""} posts={searchResult} />
+<PostList title={""} allPosts={searchResult} />

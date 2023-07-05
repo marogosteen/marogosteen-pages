@@ -3,13 +3,11 @@
     import dateToString from "@utils/dateToString";
 
     export let post: CollectionEntry<"blog">;
-
-    const { title, postSlug, publicDate, description, tags } = post.data;
 </script>
 
-<li class="mb-10">
-    <a href={"/posts/" + postSlug}>
-        <h3 class="text-lg sm:text-2xl">{title}</h3>
+<li class="mb-6">
+    <a href={"/posts/" + post.data.postSlug}>
+        <h3 class="text-lg sm:text-2xl">{post.data.title}</h3>
         <div class="text-gray-400 ms-6 my-4">
             <div class="flex">
                 <svg
@@ -25,11 +23,11 @@
                     />
                 </svg>
                 <span class="items-center justify-center mx-4"
-                    >{dateToString(publicDate)}</span
+                    >{dateToString(post.data.publicDate)}</span
                 >
             </div>
-            <p>{description}</p>
-            {#each tags as tag}
+            <p>{post.data.description}</p>
+            {#each post.data.tags as tag}
                 <a href={"/tags/" + tag}>
                     <span class="me-2">#{tag}</span>
                 </a>
