@@ -13,7 +13,7 @@
         <h3 class="basis-1/6 text-2xl sm:text-3xl font-bold">{year}</h3>
         <ul class="basis-5/6">
             {#each posts as post}
-                <Card {post} />
+                <Card post={post} />
             {/each}
         </ul>
     </div>
