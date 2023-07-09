@@ -26,17 +26,25 @@ const isShowUpdate = publicDate !== updateDate;
 ---
 
 <Layout>
-    <div class="summary">
-        <h1 class="title">{post.data.title}</h1>
-        <div class="mt-5 text-gray-300 italic">
-            <p id="public">
-                release: {publicDate}
-            </p>
-            {isShowUpdate && <p id="update">last update: {updateDate}</p>}
-            {post.data.tags.map((tag) => <a href={"/tags/"+tag}><span class="me-2">#{tag}</span></a>)}
+    <div>
+        <div class="summary">
+            <h1 class="title">{post.data.title}</h1>
+            <div class="mt-5 text-gray-300 italic">
+                <p id="public">
+                    release: {publicDate}
+                </p>
+                {isShowUpdate && <p id="update">last update: {updateDate}</p>}
+                {
+                    post.data.tags.map((tag) => (
+                        <a href={"/tags/" + tag}>
+                            <span class="me-2">#{tag}</span>
+                        </a>
+                    ))
+                }
+            </div>
         </div>
+        <Content />
     </div>
-    <Content />
 </Layout>
 
 <style>
