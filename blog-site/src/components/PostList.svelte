@@ -8,55 +8,48 @@
     export let allPosts: CollectionEntry<"blog">[];
 
     allPosts = getSortedPosts(allPosts);
-    const pagerDisplayMaxSize = 7;
-    const cardDisplay = 16;
-    const pageTotal =
-        allPosts.length % cardDisplay > 0
-            ? Math.floor(allPosts.length / cardDisplay) + 1
-            : Math.floor(allPosts.length / cardDisplay);
+    const pagerMaxSize = 7;
+    const pagerHalfSize = Math.floor(pagerMaxSize / 2);
+    const cardMaxDisplay = 16;
+    const maxPage = Math.ceil(allPosts.length / cardMaxDisplay);
 
-    const getPager = (currentPage: number, pageCount: number): number[] => {
-        const start = Math.max(
-            currentPage - Math.floor(pagerDisplayMaxSize / 2),
-            0
-        );
-        const last = Math.min(currentPage + pagerDisplayMaxSize, pageCount);
-        return [...Array(last - start)].map((_, i) => i + start);
+    const getPager = (currentPage: number): number[] => {
+        let shift = currentPage - pagerHalfSize;
+        shift = Math.min(shift, maxPage - pagerMaxSize);
+        shift = Math.max(shift, 0);
+
+        const size = Math.min(maxPage, pagerMaxSize);
+        return size > 1 ? [...Array(size)].map((_, i) => i + shift) : [];
     };
 
-    const paginationHandler = (page: number) => {
-        currentPage = page;
-        paginationPages = getPager(currentPage, pageTotal);
-        const start = currentPage * cardDisplay;
-        const end = (currentPage + 1) * cardDisplay;
-        displayPosts = allPosts.slice(start, end);
+    const getDisplayPosts = (
+        posts: CollectionEntry<"blog">[],
+        currentPage: number
+    ): CollectionEntry<"blog">[] => {
+        currentPage = currentPage;
+        const start = currentPage * cardMaxDisplay;
+        const end = (currentPage + 1) * cardMaxDisplay;
+        return getSortedPosts(posts.slice(start, end));
     };
 
     let currentPage = 0;
-    let paginationPages = getPager(currentPage, pageTotal);
-    const start = currentPage * cardDisplay;
-    const end = (currentPage + 1) * cardDisplay;
-    let displayPosts = allPosts.slice(start, end);
+    $: paginationPages = getPager(currentPage);
+    $: displayPosts = getDisplayPosts(allPosts, currentPage);
 </script>
 
 <div class="flex flex-col w-full">
-    <p>{allPosts.length}</p>
-    <p>{displayPosts.length}</p>
     <h2 class="text-3xl font-bold my-10">{title}</h2>
     <div class="join flex justify-center">
         {#each paginationPages as page}
             {#if page === currentPage}
                 <button
                     class="pager-btn pointer-events-none"
-                    on:click={() => paginationHandler(page)}
+                    on:click={() => (currentPage = page)}
                 >
                     {page + 1}
                 </button>
             {:else}
-                <button
-                    class="pager-btn"
-                    on:click={() => paginationHandler(page)}
-                >
+                <button class="pager-btn" on:click={() => (currentPage = page)}>
                     {page + 1}
                 </button>
             {/if}
@@ -74,15 +67,12 @@
             {#if page === currentPage}
                 <button
                     class="pager-btn pointer-events-none"
-                    on:click={() => paginationHandler(page)}
+                    on:click={() => (currentPage = page)}
                 >
                     {page + 1}
                 </button>
             {:else}
-                <button
-                    class="pager-btn"
-                    on:click={() => paginationHandler(page)}
-                >
+                <button class="pager-btn" on:click={() => (currentPage = page)}>
                     {page + 1}
                 </button>
             {/if}
