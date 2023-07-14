@@ -12,22 +12,17 @@ import Footer from "@components/Footer.astro";
         <title>{CONFIG.title}</title>
     </head>
     <body>
-        <div id="layout">
-            <Header />
-            <main>
-                <slot />
-            </main>
-            <Footer />
-        </div>
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
     </body>
 </html>
 
 <style>
     body {
-        @apply text-gray-200 bg-gradient-to-br from-zinc-900 from-30% to-blue-950;
-    }
-    #layout {
-        @apply min-h-screen flex flex-col mx-auto px-4 sm:px-10 lg:max-w-5xl;
+        @apply min-h-screen flex flex-col mx-auto px-4  text-gray-200 bg-gradient-to-br from-zinc-900 from-30% to-blue-950 sm:px-10 lg:max-w-5xl;
     }
     main {
         @apply flex grow;
