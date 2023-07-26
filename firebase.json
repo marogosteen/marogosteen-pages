@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "blog-site/dist",
+    "public": "marogosteen-pages/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
