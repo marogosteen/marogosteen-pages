@@ -125,22 +125,24 @@ blog の記事（post）を検索して、記事のタイトル一覧を表示�
 
 layoutは適当に作って、 `@components` とかは `tsconfig.json` にこんな感じで書いとく。
 
-```json
-{
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": "src",
-    "jsx": "react-jsx",
-    "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@layouts/*": [
-        "layouts/*"
-      ],
+- ### layout
+
+    ```json
+    {
+    "extends": "astro/tsconfigs/strict",
+    "compilerOptions": {
+        "baseUrl": "src",
+        "jsx": "react-jsx",
+        "paths": {
+        "@components/*": [
+            "components/*"
+        ],
+        "@layouts/*": [
+            "layouts/*"
+        ],
+        }
     }
-  }
-}
-```
+    }
+    ```
 
 おわりだよ。

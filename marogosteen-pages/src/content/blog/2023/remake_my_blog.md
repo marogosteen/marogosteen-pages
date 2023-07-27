@@ -6,7 +6,6 @@ updateDate: 2023-06-25
 postSlug: "20230621-remake_my_blog"
 tags:
     - "Astro"
-    - "雑記"
 description: "こっそりblogをHugoからAstroへ乗り換えてみた。"
 draft: false
 ---
