@@ -1,6 +1,6 @@
 ---
 layout: "@layouts/PostDetail.astro"
-title: 'Docker Desktop の代替案として、Multipass デビューするあなたへ捧げる手順書'
+title: 'Docker Desktop の代替案として、Multipass デビューするあなたへ捧げる手順書。'
 publicDate: 2023-07-27
 updateDate: 2023-07-27
 postSlug: '20230727-multipass'
@@ -42,7 +42,7 @@ $ multipass launch --name foo docker
 ```
 
 docker image の OS は Ubuntu 22.04 LTS だった。おそらく最新の Ubuntu LTS になるんだと思う。
-launch で docker image を指定しないと、つまり普通の multipass の Ubuntu インスタンスには初期状態で docker は使えないので注意。
+launch で docker image を指定しない、つまり普通の multipass の Ubuntu インスタンスには初期状態の場合は、 docker が用意してくれないので注意。
 
 ちなみに git は docker image の指定に関わらず、デフォで使える。
 
@@ -78,15 +78,13 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
 さてさてさーて。僕は Docker Desktop の代替として Multipass を選んだわけだけど、 Docker Desktop の代替として利用できるツールは、大きく分けて3パターンあると思ってる。
 
-1. Linux で Docker Desktop と同じことすればええがなー。（Docker Daemon と Client をソケットで繋ぐ。）
-2. Docker 一強時代は終わった！別のコンテナツールでもええやん！
-3. もう ssh して開発環境は Linux でええやん。 ソケットもマウントも、めんどくね？
-
-Marogosteen は 「vscode で Remote-SSH すればええかー。 Linux 慣れたいし。」と思い。 3 でやりました。
+  - Linux で Docker Desktop と同じことすればええがなー。（Docker Daemon と Client をソケットで繋ぐ。）
+  - Docker 一強時代は終わった！別のコンテナツールでもええやん！
+  - もう ssh して開発環境は Linux でええやん。 ソケットもマウントも、めんどくね？
 
 代表的なものは以下が挙げられる。
 
-- [lima](https://github.com/lima-vm/lima)
+- ### [lima](https://github.com/lima-vm/lima)
 
   Mac に Linux の VM インスタンス立てることを主目的としてる。 Docker を利用するのは副産物。ちゃんと調べてないけど、以降で触れる Rancher Desktop, Podman, Finch は lima ベースっぽい？ lima すごい。
   <https://developers.freee.co.jp/entry/freee-docker-desktop-alternative> より。
@@ -103,7 +101,7 @@ Marogosteen は 「vscode で Remote-SSH すればええかー。 Linux 慣れ�
 
   やべ。 multipass の話やのに lima の話に筆が走ってしまった。
 
-- [colima](https://github.com/abiosoft/colima)
+- ### [colima](https://github.com/abiosoft/colima)
 
   もうほとんど上記の lima のところで書いてしまったが、ポイントは次の感じ。
 
@@ -114,27 +112,27 @@ Marogosteen は 「vscode で Remote-SSH すればええかー。 Linux 慣れ�
 
   <https://nakarisa.hatenablog.com/entry/2023/07/27/104345>
 
-- [Rancher Desktop](https://rancherdesktop.io/)
+- ### [Rancher Desktop](https://rancherdesktop.io/)
 
   Docker Desktop 意識してるんだろう。 UI 強め。
 
-- [minikube](https://minikube.sigs.k8s.io/docs/start/)
+- ### [minikube](https://minikube.sigs.k8s.io/docs/start/)
 
   K8S までを意識してるやつ。2022年以前の記事で、バグについての記事をよく見たが今はどうか知らない。
 
-- [Podman](https://docs.podman.io/en/latest/)
+- ### [Podman](https://docs.podman.io/en/latest/)
 
   Docker CLI で `docker ps` とかしてたのが `podman ps` とかになる。
 
-- [Finch](https://github.com/runfinch/finch)
+- ### [Finch](https://github.com/runfinch/finch)
 
   一時有名になってた。あんまり知らないし、調べてない。
 
-- [Multipass](https://multipass.run/)
+- ### [Multipass](https://multipass.run/)
 
   今日の主役、 Ubuntu が提供してくれるので、 lima みたいにディストリビューションを選べたりはしないはず。結構楽に Docker + gitの環境を用意できる。
 
-これらは、OSや利用背景、K8Sの利用辺りで相性が大きく変わると思う。よく調べて、自分にあったものを利用すると良いと思う。
+これらは、 OS や利用背景、 K8S の利用辺りで相性が大きく変わると思う。よく調べて、自分にあったものを利用すると良いと思う。
 使ってみて、使い勝手悪いなって思えば浮気すればいい。（ツールの話。）
 
 ## Marogosteen は何で Multipass を採用したの？
@@ -147,13 +145,8 @@ Marogosteen は 「vscode で Remote-SSH すればええかー。 Linux 慣れ�
 
 ## 参考文献
 
-- How to install Multipass on macOS
-  - <https://multipass.run/docs/installing-on-macos>
-- Docker Engine overview
-  - <https://docs.docker.com/engine/>
-- Docker on Limaで脱Docker Desktop for Mac
-  - <https://zenn.dev/matsukaz/articles/31bc31ff1c54b4>
-- Docker on Lima なツールを色々試してみた
-  - <https://developers.freee.co.jp/entry/freee-docker-desktop-alternative>
-- colimaでDockerを触ってみた
-  - <https://nakarisa.hatenablog.com/entry/2023/07/27/104345>
+- How to install Multipass on macOS: <https://multipass.run/docs/installing-on-macos>
+- Docker Engine overview: <https://docs.docker.com/engine/>
+- Docker on Limaで脱Docker Desktop for Mac: <https://zenn.dev/matsukaz/articles/31bc31ff1c54b4>
+- Docker on Lima なツールを色々試してみた: <https://developers.freee.co.jp/entry/freee-docker-desktop-alternative>
+- colimaでDockerを触ってみた: <https://nakarisa.hatenablog.com/entry/2023/07/27/104345>
