@@ -29,16 +29,19 @@ $ brew install --cask multipass
 
 ``` sh
 # 停止したインスタンスの起動
-$ multipass start foo 
+$ multipass start <インスタンス名>
 
 # インスタンスの停止
-$ multipass stop foo
+$ multipass stop <インスタンス名>
 
 # 利用可能イメージの出力
 $ multipass find
 
-# 名前がfooのインスタンスを作成・起動
-$ multipass launch --name foo docker
+# docker image テンプレインスタンスを作成・起動
+$ multipass launch --name <インスタンス名> docker
+
+# attach
+$ multipass shell foo
 ```
 
 docker image の OS は Ubuntu 22.04 LTS だった。おそらく最新の Ubuntu LTS になるんだと思う。
@@ -63,11 +66,33 @@ PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-poli
 UBUNTU_CODENAME=jammy
 ```
 
+detach は以下のように`exit`で。
+
+detach してもインスタンスは起動してるので、`stop`で止めてあげる。
+`list` でインスタンスの一覧と State 確認できる。
+
+``` sh
+ubuntu@foo:~$ exit
+
+$ multipass stop <インスタンス名>
+
+$ multipass list <インスタンス名>
+```
+
+git config とか設定し直しなので、会社のコミットログにユーザー名とメアド残したくない時は、インスタンス切り替えるとか面白そう。とりあえず、git config 設定を忘れないように。
+
+```
+git config --global user.name <お名前>
+git config --global user.email <メアド>
+```
+
 ## そもそもの Docker Desktop　は何してたのか（僕の認識）
 
 あくまで僕の認識。
 
-Docker は Linux が必要。（chroot に依存してるからなのか？）なので、 Mac でも Win でも、 Linux の仮想環境上で動作させる必要がある。もっと言うと、　Docker Engine は Docker Client （CLIで叩いてるあれ。） と Docker Daemon がAPIで通信してて、「Linux の環境よこせや。」ってわがまま言ってるのは Daemon の方。 Client と Daemon は別々なんだなーがポイント。
+Docker は Linux が必要。（chroot に依存してるからなのか？）なので、 Mac でも Win でも、 Linux の仮想環境上で動作させる必要がある。もっと言うと、　Docker Engine は Docker Client （CLIで叩いてるあれ。） と Docker Daemon がAPIで通信してて、「Linux の環境よこせや。」ってわがまま言ってるのは Daemon の方。 
+
+「Client と Daemon は別々なんだなー。」がポイント。
 
 brew で docker をインストールしても Client（CLI） のみなので、 `docker ps` とかは `Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?` とか言われると思う。
 つまり Docker Desktop は Linux の VM を立てて Docker Daemon を常駐させ、ホストOSの Docker Client CLI の API を Unix socket で通信してくれてた。便利ー。が Docker Desktop がしてくれていたこと。
