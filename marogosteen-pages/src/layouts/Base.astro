@@ -6,26 +6,26 @@ import Footer from "@components/Footer.astro";
 
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{CONFIG.title}</title>
-    </head>
-    <body>
-        <Header />
-        <main>
-            <slot />
-        </main>
-        <Footer />
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{CONFIG.title}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <style>
-    body {
-        @apply min-h-screen flex flex-col mx-auto px-4 text-gray-200
+  body {
+    @apply min-h-screen flex flex-col mx-auto px-4 text-gray-200
         bg-gradient-to-br from-zinc-900 from-30% to-blue-950 sm:px-10 lg:max-w-5xl;
-    }
-    main {
-        @apply flex grow;
-    }
+  }
+  main {
+    @apply flex grow;
+  }
 </style>

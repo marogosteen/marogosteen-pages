@@ -15,7 +15,7 @@ draft: false
 
 先に Astro blog 戦記について書けやって声が聞こえますが、自分的にとってリアルタイムな話なので、先にこっちを。。。
 
-## Astro はフロントエンドUI component を扱える。
+## Astro はフロントエンドUI component を扱える
 
 前回でも触れたように、 Astro は Astro アイランドっていうアイランドアーキテクチャを採用してる。
 基本は普通の HTML と CSS を提供して JS は渡さないので早いのが売りの Astro 。ドキュメント（2023/06/27時点）の本文から抜粋すると
@@ -28,7 +28,7 @@ draft: false
 検索したらページ遷移せず（リンクが変わらない）、検索結果を表示してみたかった。
  React や Vue もありだけど、4月頃に勉強してたので Svelte をチョイス。
 
-## やってみよー。
+## やってみよー
 
 blog の記事（post）を検索して、記事のタイトル一覧を表示してみる。
 
@@ -129,19 +129,19 @@ layoutは適当に作って、 `@components` とかは `tsconfig.json` にこん
 
     ```json
     {
-    "extends": "astro/tsconfigs/strict",
-    "compilerOptions": {
-        "baseUrl": "src",
-        "jsx": "react-jsx",
-        "paths": {
-        "@components/*": [
-            "components/*"
-        ],
-        "@layouts/*": [
-            "layouts/*"
-        ],
+        "extends": "astro/tsconfigs/strict",
+        "compilerOptions": {
+            "baseUrl": "src",
+            "jsx": "react-jsx",
+            "paths": {
+            "@components/*": [
+                "components/*"
+            ],
+            "@layouts/*": [
+                "layouts/*"
+            ],
+            }
         }
-    }
     }
     ```
 

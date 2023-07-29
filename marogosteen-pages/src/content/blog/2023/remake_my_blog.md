@@ -18,7 +18,9 @@ draft: false
 
 ## remake 後の構成
 
-この blog の構成は以下の通り。<br>[source](https://github.com/marogosteen/marogosteen-pages)
+この blog の構成は以下の通り。  
+[source](https://github.com/marogosteen/marogosteen-pages)
+
 |||
 |-|-|
 |SSG|Astro|
