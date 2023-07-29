@@ -2,69 +2,66 @@
 import type { MarkdownLayoutProps } from "astro";
 
 type Props = MarkdownLayoutProps<{
-    title: string;
-    publicDate: string;
-    updateDate: string;
+  title: string;
+  publicDate: string;
+  updateDate: string;
 }>;
 ---
 
 <article>
-    <slot />
+  <slot />
 </article>
 
 <style>
-    article {
-        @apply mt-8 text-sm sm:text-lg;
-    }
-    article :global(h2) {
-        @apply text-xl mb-8 mt-20 pb-4 font-semibold border-b-2 border-b-orange-600 sm:text-3xl;
-    }
-    article :global(h3) {
-        @apply text-xl font-semibold my-2;
-    }
-    article :global(ol) {
-        @apply list-outside list-decimal my-5 ms-2.5;
-    }
-    article :global(ul) {
-        @apply list-outside list-disc my-5 ms-5;
-    }
-    article :global(li) {
-        @apply my-5;
-    }
-    article :global(li > p) {
-        @apply ms-5;
-    }
-    article :global(a) {
-        @apply underline underline-offset-auto break-all;
-    }
-    article :global(p) {
-        @apply my-4;
-    }
-    article :global(img) {
-        @apply indent-0 rounded-xl w-10/12 my-10 mx-auto;
-    }
-    article :global(code) {
-        @apply text-white p-1 mx-1 text-sm bg-gray-700 rounded-lg px-3;
-    }
-    article :global(pre) {
-        @apply p-5 my-10 rounded-lg;
-    }
-    article :global(pre > code) {
-        @apply bg-opacity-0 px-0;
-    }
-    article :global(pre > code > span) {
-        @apply whitespace-normal break-all;
-    }
-    article :global(table) {
-        @apply mx-auto my-10 text-sm sm:text-base;
-    }
-    article :global(tr) {
-        @apply border-b border-gray-500;
-    }
-    article :global(td) {
-        @apply py-5 px-5;
-    }
-    article :global(tbody) {
-        @apply grow;
-    }
+  article {
+    @apply mt-8 text-sm sm:text-lg;
+  }
+  article :global(h2) {
+    @apply text-xl mb-8 mt-20 pb-4 font-semibold border-b-2 border-b-orange-600 sm:text-3xl;
+  }
+  article :global(h3) {
+    @apply text-xl font-semibold my-2;
+  }
+  article :global(ol) {
+    @apply list-outside list-decimal my-5 ms-2.5;
+  }
+  article :global(ul) {
+    @apply list-outside list-disc my-5 ms-5;
+  }
+  article :global(li) {
+    @apply my-5;
+  }
+  article :global(li > p) {
+    @apply ms-5;
+  }
+  article :global(a) {
+    @apply underline underline-offset-auto break-all;
+  }
+  article :global(p) {
+    @apply my-4;
+  }
+  article :global(img) {
+    @apply indent-0 rounded-xl w-10/12 my-10 mx-auto;
+  }
+  article :global(code) {
+    @apply relative text-white p-1 mx-1 text-sm bg-gray-700 rounded-lg px-3;
+  }
+  article :global(pre) {
+    @apply p-5 my-10 rounded-lg flex overflow-x-auto;
+  }
+  article :global(pre > code) {
+    @apply bg-opacity-0 px-0 flex-none w-10;
+  }
+  article :global(table) {
+    @apply mx-auto my-10 text-sm sm:text-base;
+  }
+  article :global(tr) {
+    @apply border-b border-gray-500;
+  }
+  article :global(td) {
+    @apply py-5 px-5;
+  }
+  article :global(tbody) {
+    @apply grow;
+  }
 </style>
