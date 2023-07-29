@@ -14,7 +14,7 @@ type Props = MarkdownLayoutProps<{
 
 <style>
     article {
-        @apply mt-8 text-sm break-words sm:text-lg;
+        @apply mt-8 text-sm sm:text-lg;
     }
     article :global(h2) {
         @apply text-xl mb-8 mt-20 pb-4 font-semibold border-b-2 border-b-orange-600 sm:text-3xl;
@@ -35,7 +35,7 @@ type Props = MarkdownLayoutProps<{
         @apply ms-5;
     }
     article :global(a) {
-        @apply underline underline-offset-auto;
+        @apply underline underline-offset-auto break-all;
     }
     article :global(p) {
         @apply my-4;
@@ -51,6 +51,9 @@ type Props = MarkdownLayoutProps<{
     }
     article :global(pre > code) {
         @apply bg-opacity-0 px-0;
+    }
+    article :global(pre > code > span) {
+        @apply whitespace-normal break-all;
     }
     article :global(table) {
         @apply mx-auto my-10 text-sm sm:text-base;
