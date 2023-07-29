@@ -37,15 +37,12 @@ blog の記事（post）を検索して、記事のタイトル一覧を表示�
     とりあえず svelte を入れる。[ここ](https://docs.astro.build/ja/guides/integrations-guide/svelte/)参考にした。
 
     ```shell
-
     npx astro add svelte
-
     ```
 
     色々聞かれるけど、 all yes で。すると、`astro.config.mjs`が以下のように良い感じにしてくれる。
 
     ```js
-
     import { defineConfig } from 'astro/config';
     import svelte from '@astrojs/svelte';    //<- NEW!
 
@@ -53,7 +50,6 @@ blog の記事（post）を検索して、記事のタイトル一覧を表示�
         // ...
         integrations: [svelte()],    //<- NEW!
     });
-
     ```
 
     それだけ！
@@ -63,7 +59,6 @@ blog の記事（post）を検索して、記事のタイトル一覧を表示�
     先に検索用の component を作って、以下の内容を書く。 Typescript 使う人は`<script lang="ts">`を忘れないように。
 
     ```svelte
-
     <script lang="ts">
         import type { CollectionEntry } from "astro:content";
 
@@ -102,7 +97,6 @@ blog の記事（post）を検索して、記事のタイトル一覧を表示�
             {/each}
         </ui>
     </div>
-
     ```
 
     今思うと全記事を親 component から受ける必要はないと思うけど、 `export` で全記事をプロパティとして受け取る。
@@ -116,7 +110,6 @@ blog の記事（post）を検索して、記事のタイトル一覧を表示�
     で、さっきの検索 component を用意。以上。
 
     ```astro
-
     ---
     import Layout from "@layouts/Base.astro";
     import SearchPost from "@components/SearchPost.svelte";
@@ -128,7 +121,6 @@ blog の記事（post）を検索して、記事のタイトル一覧を表示�
     <Layout>
         <SearchPost allPosts={posts} client:load/>
     </Layout>
-
     ```
 
 layoutは適当に作って、 `@components` とかは `tsconfig.json` にこんな感じで書いとく。
@@ -136,7 +128,6 @@ layoutは適当に作って、 `@components` とかは `tsconfig.json` にこん
 - ### layout
 
     ```json
-    
     {
         "extends": "astro/tsconfigs/strict",
         "compilerOptions": {
@@ -152,7 +143,6 @@ layoutは適当に作って、 `@components` とかは `tsconfig.json` にこん
             }
         }
     }
-
     ```
 
 おわりだよ。

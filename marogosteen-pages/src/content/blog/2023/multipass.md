@@ -21,10 +21,8 @@ draft: false
 - brew でインストール
 
 ``` sh
-
 # install multipass
 brew install --cask multipass
-
 ```
 
 - インストール後
@@ -32,7 +30,6 @@ brew install --cask multipass
 launch でインスタンス作成し、 shell でシェルプロンプトを開き、 exit で抜けて、 stop で止めるって感じ。
 
 ``` sh
-
 # 利用可能イメージの出力
 multipass find
 # docker image テンプレインスタンスを作成・起動
@@ -43,7 +40,6 @@ multipass start <インスタンス名>
 multipass shell foo
 # インスタンスの停止
 multipass stop <インスタンス名>
-
 ```
 
 docker image は Ubuntu 22.04 LTS だった。おそらく最新の Ubuntu LTS になるんだと思う。
@@ -52,7 +48,6 @@ launch で docker image を指定しない、つまり普通の multipass の Ub
 ちなみに git は docker image の指定に関わらず、デフォで使える。
 
 ``` sh
-
 ubuntu@foo:~$ cat /etc/os-release
 
 PRETTY_NAME="Ubuntu 22.04.2 LTS"
@@ -67,36 +62,29 @@ SUPPORT_URL="https://help.ubuntu.com/"
 BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 UBUNTU_CODENAME=jammy
-
 ```
 
 detach は以下のように`exit`で。
 
 ``` sh
-
 ubuntu@foo:~$ exit
-
 ```
 
 detach してもインスタンスは起動してるので、`stop`で止めてあげる。
 `list` でインスタンスの一覧と State 確認できる。
 
 ``` sh
-
 # ホストOS側のシェルでvmインスタンスで止める
 multipass stop <インスタンス名>
 # ホストOS側のシェルでvmインスタンスの一覧表示
 multipass list <インスタンス名>
-
 ```
 
 git config とか設定し直しなので、会社のコミットログにユーザー名とメアド残したくない時は、インスタンス切り替えるとか面白そう。とりあえず、git config 設定を忘れないように。
 
 ``` sh
-
 git config --global user.name <お名前>
 git config --global user.email <メアド>
-
 ```
 
 ## そもそもの Docker Desktop　は何してたのか（僕の認識）
