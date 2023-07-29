@@ -1,6 +1,6 @@
 ---
 layout: "@layouts/PostDetail.astro"
-title: 'Docker Desktop の代替案として、Multipass デビューするあなたへ捧げる手順書。'
+title: 'Docker Desktop の代替案としてMultipass デビューする、そんなあなたへ捧げる手順書。'
 publicDate: 2023-07-27
 updateDate: 2023-07-27
 postSlug: '20230727-multipass'
@@ -21,27 +21,33 @@ draft: false
 - brew でインストール
 
 ``` sh
+
 # install multipass
-$ brew install --cask multipass
+brew install --cask multipass
+
 ```
 
 - インストール後
 
-``` sh
-# 停止したインスタンスの起動
-$ multipass start <インスタンス名>
+launch でインスタンス作成し、 shell でシェルプロンプトを開き、 exit で抜けて、 stop で止めるって感じ。
 
-# インスタンスの停止
-$ multipass stop <インスタンス名>
+``` sh
 
 # 利用可能イメージの出力
-$ multipass find
+multipass find
 
 # docker image テンプレインスタンスを作成・起動
-$ multipass launch --name <インスタンス名> docker
+multipass launch --name <インスタンス名> docker
+
+# 停止したインスタンスの起動（ launch直後はstartされている。 ）
+multipass start <インスタンス名>
 
 # attach
-$ multipass shell foo
+multipass shell foo
+
+# インスタンスの停止
+multipass stop <インスタンス名>
+
 ```
 
 docker image の OS は Ubuntu 22.04 LTS だった。おそらく最新の Ubuntu LTS になるんだと思う。
@@ -50,6 +56,7 @@ launch で docker image を指定しない、つまり普通の multipass の Ub
 ちなみに git は docker image の指定に関わらず、デフォで使える。
 
 ``` sh
+
 ubuntu@foo:~$ cat /etc/os-release
 
 PRETTY_NAME="Ubuntu 22.04.2 LTS"
@@ -64,33 +71,43 @@ SUPPORT_URL="https://help.ubuntu.com/"
 BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 UBUNTU_CODENAME=jammy
+
 ```
 
 detach は以下のように`exit`で。
+
+``` sh
+
+ubuntu@foo:~$ exit
+
+```
 
 detach してもインスタンスは起動してるので、`stop`で止めてあげる。
 `list` でインスタンスの一覧と State 確認できる。
 
 ``` sh
-ubuntu@foo:~$ exit
 
-$ multipass stop <インスタンス名>
+# ホストOS側のシェルでvmインスタンスで止める
+multipass stop <インスタンス名>
+# ホストOS側のシェルでvmインスタンスの一覧表示
+multipass list <インスタンス名>
 
-$ multipass list <インスタンス名>
 ```
 
 git config とか設定し直しなので、会社のコミットログにユーザー名とメアド残したくない時は、インスタンス切り替えるとか面白そう。とりあえず、git config 設定を忘れないように。
 
-```
+``` sh
+
 git config --global user.name <お名前>
 git config --global user.email <メアド>
+
 ```
 
 ## そもそもの Docker Desktop　は何してたのか（僕の認識）
 
 あくまで僕の認識。
 
-Docker は Linux が必要。（chroot に依存してるからなのか？）なので、 Mac でも Win でも、 Linux の仮想環境上で動作させる必要がある。もっと言うと、　Docker Engine は Docker Client （CLIで叩いてるあれ。） と Docker Daemon がAPIで通信してて、「Linux の環境よこせや。」ってわがまま言ってるのは Daemon の方。 
+Docker は Linux が必要。（chroot に依存してるからなのか？）なので、 Mac でも Win でも、 Linux の仮想環境上で動作させる必要がある。もっと言うと、　Docker Engine は Docker Client （CLIで叩いてるあれ。） と Docker Daemon がAPIで通信してて、「Linux の環境よこせや。」ってわがまま言ってるのは Daemon の方。
 
 「Client と Daemon は別々なんだなー。」がポイント。
 
@@ -103,9 +120,9 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
 さてさてさーて。僕は Docker Desktop の代替として Multipass を選んだわけだけど、 Docker Desktop の代替として利用できるツールは、大きく分けて3パターンあると思ってる。
 
-  - Linux で Docker Desktop と同じことすればええがなー。（Docker Daemon と Client をソケットで繋ぐ。）
-  - Docker 一強時代は終わった！別のコンテナツールでもええやん！
-  - もう ssh して開発環境は Linux でええやん。 ソケットもマウントも、めんどくね？
+- Linux で Docker Desktop と同じことすればええがなー。（Docker Daemon と Client をソケットで繋ぐ。）
+- Docker 一強時代は終わった！別のコンテナツールでもええやん！
+- もう ssh して開発環境は Linux でええやん。 ソケットもマウントも、めんどくね？
 
 代表的なものは以下が挙げられる。
 
