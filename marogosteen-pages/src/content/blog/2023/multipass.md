@@ -35,22 +35,18 @@ launch でインスタンス作成し、 shell でシェルプロンプトを開
 
 # 利用可能イメージの出力
 multipass find
-
 # docker image テンプレインスタンスを作成・起動
 multipass launch --name <インスタンス名> docker
-
 # 停止したインスタンスの起動（ launch直後はstartされている。 ）
 multipass start <インスタンス名>
-
 # attach
 multipass shell foo
-
 # インスタンスの停止
 multipass stop <インスタンス名>
 
 ```
 
-docker image の OS は Ubuntu 22.04 LTS だった。おそらく最新の Ubuntu LTS になるんだと思う。
+docker image は Ubuntu 22.04 LTS だった。おそらく最新の Ubuntu LTS になるんだと思う。
 launch で docker image を指定しない、つまり普通の multipass の Ubuntu インスタンスには初期状態の場合は、 docker が用意してくれないので注意。
 
 ちなみに git は docker image の指定に関わらず、デフォで使える。
@@ -172,9 +168,10 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
 - ### [Multipass](https://multipass.run/)
 
-  今日の主役、 Ubuntu が提供してくれるので、 lima みたいにディストリビューションを選べたりはしないはず。結構楽に Docker + gitの環境を用意できる。
+  今日の主役。 Ubuntu が提供してくれるので、 lima みたいにディストリビューションを選べたりはしないはず。結構楽に Docker + gitの環境を用意できる。
 
 これらは、 OS や利用背景、 K8S の利用辺りで相性が大きく変わると思う。よく調べて、自分にあったものを利用すると良いと思う。
+
 使ってみて、使い勝手悪いなって思えば浮気すればいい。（ツールの話。）
 
 ## Marogosteen は何で Multipass を採用したの？
@@ -182,7 +179,6 @@ brew で docker をインストールしても Client（CLI） のみなので�
 譲れないのは *vscode dev containers* を利用できること。
 
 逆にいえば、端から SSH でホストOS側で docker コマンドが使えるかどうかはどうでも良い。
-
 ついでに Linux と友達になれたらええなー。
 
 ## 参考文献
