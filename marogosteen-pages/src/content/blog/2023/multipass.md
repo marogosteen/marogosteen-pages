@@ -104,7 +104,7 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
 さてさてさーて。僕は Docker Desktop の代替として Multipass を選んだわけだけど、 Docker Desktop の代替として利用できるツールは、大きく分けて3パターンあると思ってる。
 
-- Linux で Docker Desktop と同じことすればええがなー。（Docker Daemon と Client をソケットで繋ぐ。）
+- Linux VM で Docker Desktop と同じことすればええがなー。（Docker Daemon と Client をソケットで繋ぐ。）
 - Docker 一強時代は終わった！別のコンテナツールでもええやん！
 - もう ssh して開発環境は Linux でええやん。 ソケットもマウントも、めんどくね？
 
@@ -112,12 +112,18 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
 - ### [lima](https://github.com/lima-vm/lima)
 
-  Mac に Linux の VM インスタンス立てることを主目的としてる。 Docker を利用するのは副産物。ちゃんと調べてないけど、以降で触れる Rancher Desktop, Podman, Finch は lima ベースっぽい？ lima すごい。
-  <https://developers.freee.co.jp/entry/freee-docker-desktop-alternative> より。
+  lima は CNCF (Cloud Native Computing Foundation) の sandbox project （2023/08/04時点）。
 
-  yaml で設定して、 Debian とか Fedora とか好きなディストリビューションを用意できる。
+  Mac に Linux の VM インスタンス立てることを主目的としてる。はず。 Docker を利用するのは副産物。のはず。 k8s の example があったので k8s も使える。はず。  
+  以降で触れる colima, Rancher Desktop, Finch は lima ベースらしい。 lima すごい。
+  <https://github.com/lima-vm/lima/blob/master/README.ja.md>と<https://developers.freee.co.jp/entry/freee-docker-desktop-alternative> より。  
+  M1 Mac 使える。 lima ベースのこれらもおそらく M1 Mac 使える。
+
+  yaml で設定して、 Debian とか Fedora とか好きなディストリビューションを用意できる。 README を見た感じ cloud-initを使ってるっぽい。
 
   lima 使ってないのに、 lima love ポイント語るんやが、現時点（2023年7月27日）で、[最もコミットしてる](https://github.com/lima-vm/lima/graphs/contributors)のが[@AkihiroSuda](https://github.com/AkihiroSuda)さんで、プロフィール見た感じ、どうやらNTTに勤められている方なのかな？パスポート無しで会える距離にいるのは、親近感感じる。
+
+  しかも、日本語の README がある。
 
   Docker 利用の話に戻すとソケットやらマウントやらは自分で設定する必要がある。（そりゃそう。 linux をインスタンス立てるのが主目的なはずなので。）
   調べてないけど、ソケット・マウントしなくても ssh で Linux 上で開発するマンもOK。
@@ -140,11 +146,13 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
 - ### [Rancher Desktop](https://rancherdesktop.io/)
 
-  Docker Desktop 意識してるんだろう。 UI 強め。
+  Docker Desktop 意識してるんだろう。 UI 強め。 UI は TS で書かれた Electron アプリケーション。いいすね。
+
+  lima のところで書いたけど、 lima ベース。k8s とコンテナを管理できる。
 
 - ### [minikube](https://minikube.sigs.k8s.io/docs/start/)
 
-  K8S までを意識してるやつ。2022年以前の記事で、バグについての記事をよく見たが今はどうか知らない。
+  kubernetes によるローカルで kubernetes の環境を用意するツール。2022年以前の記事で、バグについての記事をよく見たが今はどうか知らない。ちょっと Github issue を覗いたけど、「API server が落ちる。」とかあった。
 
 - ### [Podman](https://docs.podman.io/en/latest/)
 
@@ -158,7 +166,7 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
   今日の主役。 Ubuntu が提供してくれるので、 lima みたいにディストリビューションを選べたりはしないはず。結構楽に Docker + gitの環境を用意できる。
 
-これらは、 OS や利用背景、 K8S の利用辺りで相性が大きく変わると思う。よく調べて、自分にあったものを利用すると良いと思う。
+これらは、 OS や利用背景、 k8s の利用辺りで相性が大きく変わると思う。よく調べて、自分にあったものを利用すると良いと思う。
 
 使ってみて、使い勝手悪いなって思えば浮気すればいい。（ツールの話。）
 
@@ -168,6 +176,10 @@ brew で docker をインストールしても Client（CLI） のみなので�
 
 逆にいえば、端から SSH でホストOS側で docker コマンドが使えるかどうかはどうでも良い。
 ついでに Linux と友達になれたらええなー。
+
+だから lima でも全然良かったし、乗り換える可能性も普通にある。
+
+Linux 以外だと、例えばMacはフォルダーを開く・ファイル選択する時に Finder が毎回顔出してきたりするのがウザく、 Linux で開発するのがハマってる。
 
 ## 参考文献
 
