@@ -5,7 +5,7 @@
     export let post: CollectionEntry<"blog">;
 </script>
 
-<li class="mb-6">
+<li class="mb-12">
     <a href={"/posts/" + post.data.postSlug}>
         <h3 class="text-lg sm:text-2xl">{post.data.title}</h3>
         <div class="text-gray-400 ms-6 my-4">
