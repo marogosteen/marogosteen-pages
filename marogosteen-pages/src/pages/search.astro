@@ -7,5 +7,5 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 ---
 
 <Layout>
-    <SearchPost allPosts={posts} client:load/>
+  <SearchPost allPosts={posts} client:load />
 </Layout>

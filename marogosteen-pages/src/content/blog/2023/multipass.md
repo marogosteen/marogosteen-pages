@@ -2,7 +2,7 @@
 layout: "@layouts/PostDetail.astro"
 title: 'Docker Desktop の代替案としてMultipass デビューする、そんなあなたへ捧げる手順書。'
 publicDate: 2023-07-27
-updateDate: 2023-07-27
+updateDate: 2023-08-04
 postSlug: '20230727-multipass'
 tags: 
     - 'Docker'

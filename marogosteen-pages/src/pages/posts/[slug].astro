@@ -4,17 +4,17 @@ import { CollectionEntry, getCollection } from "astro:content";
 import dateToString from "@utils/dateToString";
 
 export interface Props {
-    post: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog">;
 }
 
 export async function getStaticPaths() {
-    const posts = await getCollection("blog", ({ data }) => !data.draft);
-    const postResult = posts.map((post) => ({
-        params: { slug: post.data.postSlug },
-        props: { post },
-    }));
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const postResult = posts.map((post) => ({
+    params: { slug: post.data.postSlug },
+    props: { post },
+  }));
 
-    return [...postResult];
+  return [...postResult];
 }
 
 const { post } = Astro.props;
@@ -26,32 +26,35 @@ const isShowUpdate = publicDate !== updateDate;
 ---
 
 <Layout>
-    <div>
-        <div class="summary">
-            <h1 class="title">{post.data.title}</h1>
-            <div class="mt-5 text-gray-300 italic">
-                <p id="public">
-                    release: {publicDate}
-                </p>
-                {isShowUpdate && <p id="update">last update: {updateDate}</p>}
-                {
-                    post.data.tags.map((tag) => (
-                        <a href={"/tags/" + tag}>
-                            <span class="me-2">#{tag}</span>
-                        </a>
-                    ))
-                }
-            </div>
-        </div>
-        <Content />
+  <div>
+    <div class="summary">
+      <h1 class="title">{post.data.title}</h1>
+      <div class="mt-5 text-gray-300 italic">
+        <p id="public">
+          release: {publicDate}
+        </p>
+        {isShowUpdate && <p id="update">last update: {updateDate}</p>}
+        {
+          post.data.tags.map((tag) => (
+            <a href={"/tags/" + tag} class="tag">
+              <span>#{tag}</span>
+            </a>
+          ))
+        }
+      </div>
     </div>
+    <Content />
+  </div>
 </Layout>
 
 <style>
-    .summary {
-        @apply my-28;
-    }
-    .title {
-        @apply text-xl text-center font-bold sm:text-3xl;
-    }
+  .summary {
+    @apply my-28;
+  }
+  .title {
+    @apply text-xl text-center font-bold sm:text-3xl;
+  }
+  .tag {
+    @apply me-2 underline underline-offset-auto;
+  }
 </style>

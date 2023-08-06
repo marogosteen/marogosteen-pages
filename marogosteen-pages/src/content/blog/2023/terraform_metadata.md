@@ -43,7 +43,7 @@ google_compute_instance のリソースの全体記述例。実際に google_com
 resource "google_compute_instance" "vm-instance" {
   name         = "maronginx"
   machine_type = "e2-micro"
-  zone         = var.use_zone
+  zone         = "asia-northeast1-a"
   tags         = ["allow-external-ssh"]
 
   boot_disk {
@@ -67,7 +67,8 @@ resource "google_compute_instance" "vm-instance" {
 
 ## compute engine の external ip と Terraform
 
-network_interface に `access_config {}` を書いてあげると ephemeral で external ip を用意してくれる。固定なら中に書いてやる。
+network_interface に `access_config {}` を書いてあげると ephemeral で external ip を用意してくれる。固定なら中に書いてやる。  
+ちなみに、 UI で構築する場合は初期値が `ephemeral` になっているので紛らわしい。
 
 ## 余談
 
