@@ -3,7 +3,7 @@ layout: "@layouts/PostDetail.astro"
 title: 'やっぱりブログは大事だ。'
 publicDate: 2023-08-07
 updateDate: 2023-08-07
-postSlug: '202308-07-leave'
+postSlug: '20230807-leave'
 tags: 
     - '雑記'
 description: '残すことの大切さ。'

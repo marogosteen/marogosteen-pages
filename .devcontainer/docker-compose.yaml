@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    image: vsc-marogosteen-pages:latest
+    container_name: vsc-marogosteen-pages
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    volumes:
+      - ..:/workspaces/vsc-marogosteen-pages:cached
+    command: sleep infinity
