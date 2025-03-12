@@ -3,7 +3,7 @@ import { CONFIG } from "@config";
 ---
 
 <header>
-    <a href="/" class="logo">
+    <a href="/" class="title">
         <h1>{CONFIG.title}</h1>
     </a>
     <nav>
@@ -65,8 +65,8 @@ import { CONFIG } from "@config";
         @apply flex w-full flex-col gap-x-12 mt-auto md:w-fit;
     }
 
-    .logo {
-        @apply absolute grow my-auto text-2xl font-bold sm:text-3xl md:static;
+    .title {
+        @apply absolute grow my-auto text-xl font-bold sm:text-xl md:static;
     }
     .nav-item-list {
         @apply flex flex-col gap-x-12 gap-y-4 bg-gray-800 py-8 my-5 rounded-3xl

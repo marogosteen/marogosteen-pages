@@ -5,5 +5,5 @@ export type Config = {
 
 export const CONFIG: Config = {
   url: "marogosteen-pages.web.app",
-  title: "Marogosteen-Pages"
+  title: "Marogosteen Pages"
 }
