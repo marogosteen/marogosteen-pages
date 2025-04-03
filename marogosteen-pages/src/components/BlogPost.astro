@@ -1,0 +1,41 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import dateToString from "@utils/dateToString";
+import { render } from "astro:content";
+
+export interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const publicDate = dateToString(post.data.publicDate);
+const updateDate = dateToString(post.data.updateDate);
+const isShowUpdate = publicDate !== updateDate;
+---
+
+<div>
+    <div class="my-28">
+        <h1 class="text-xl text-center font-bold sm:text-3xl">
+            {post.data.title}
+        </h1>
+        <div class="mt-5 text-gray-300 italic">
+            <p id="public">
+                release: {publicDate}
+            </p>
+            {isShowUpdate && <p id="update">last update: {updateDate}</p>}
+            {
+                post.data.tags.map((tag) => (
+                    <a
+                        href={"/tags/" + tag}
+                        class="me-2 underline underline-offset-auto"
+                    >
+                        <span>#{tag}</span>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+    <Content />
+</div>

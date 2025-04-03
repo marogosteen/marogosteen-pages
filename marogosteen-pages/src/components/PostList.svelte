@@ -66,22 +66,16 @@
         {#each paginationPages as page}
             {#if page === currentPage}
                 <button
-                    class="pager-btn pointer-events-none"
+                    class="px-2 my-6 border-x pointer-events-none"
                     on:click={() => (currentPage = page)}
                 >
                     {page + 1}
                 </button>
             {:else}
-                <button class="pager-btn" on:click={() => (currentPage = page)}>
+                <button class="px-2 my-6 border-x" on:click={() => (currentPage = page)}>
                     {page + 1}
                 </button>
             {/if}
         {/each}
     </div>
 </div>
-
-<style>
-    .pager-btn {
-        @apply px-2 my-6 border-x;
-    }
-</style>

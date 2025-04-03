@@ -13,7 +13,10 @@
 			"extensions": [
 				"eamodio.gitlens",
 				"astro-build.astro-vscode",
-				"svelte.svelte-vscode"
+				"svelte.svelte-vscode",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"bradlc.vscode-tailwindcss"
 			]
 		}
 	}
