@@ -3,18 +3,22 @@ import { CONFIG } from "@config";
 ---
 
 <header class="my-10">
-    <nav class="flex">
+    <nav class="flex items-center">
         <div class="grow">
             <a href="/">
-                <h1 class="text-xl font-bold inline-block">{CONFIG.title}</h1>
+                <h1 class="text-xl font-bold inline-block whitespace-nowrap">
+                    {CONFIG.title}
+                </h1>
             </a>
         </div>
 
         <div
             id="menu"
-            class="h-min absolute mt-10 inset-10 md:mt-0 md:static md:bg-inherit hidden"
+            class="h-min absolute mt-10 inset-10 md:mt-0 md:static md:bg-inherit hidden md:block"
         >
-            <div class="flex justify-center rounded-3xl bg-gray-800">
+            <div
+                class="flex justify-center rounded-3xl bg-gray-800 md:bg-inherit"
+            >
                 <div
                     class="flex flex-col gap-x-12 gap-y-4 justify-self-center my-3 md:flex-row"
                 >
