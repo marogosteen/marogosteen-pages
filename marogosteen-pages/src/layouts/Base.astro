@@ -1,0 +1,23 @@
+---
+import "../styles/app.css";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Marogosteen Pages</title>
+  </head>
+  <body
+    class="min-h-screen min-w-xs flex flex-col mx-auto px-4 text-gray-200 bg-gradient-to-br from-zinc-900 from-30% to-blue-950 sm:px-10 lg:max-w-5xl"
+  >
+    <Header />
+    <main class="flex grow justify-center">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

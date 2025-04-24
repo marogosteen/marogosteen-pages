@@ -1,0 +1,99 @@
+---
+import type { CollectionEntry } from "astro:content";
+import dateToString from "@utils/dateToString";
+import { render } from "astro:content";
+
+export interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const publicDate = dateToString(post.data.publicDate);
+const updateDate = dateToString(post.data.updateDate);
+const isShowUpdate = publicDate !== updateDate;
+---
+
+<div>
+    <div class="my-28">
+        <h1 class="text-xl text-center font-bold sm:text-3xl">
+            {post.data.title}
+        </h1>
+        <div class="mt-5 text-gray-300 italic">
+            <p id="public">
+                release: {publicDate}
+            </p>
+            {isShowUpdate && <p id="update">last update: {updateDate}</p>}
+            {
+                post.data.tags.map((tag) => (
+                    <a
+                        href={"/tags/" + tag}
+                        class="me-2 underline underline-offset-auto"
+                    >
+                        <span>#{tag}</span>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+    <article>
+        <Content />
+    </article>
+</div>
+
+<style>
+    @reference "../styles/app.css";
+
+    article {
+        @apply mt-8 text-sm sm:text-lg;
+    }
+    article :global(h2) {
+        @apply text-xl mb-8 mt-20 pb-4 font-semibold border-b-2 border-b-orange-600 sm:text-3xl;
+    }
+    article :global(h3) {
+        @apply text-xl font-semibold my-2;
+    }
+    article :global(ol) {
+        @apply list-outside list-decimal my-10 ms-2.5;
+    }
+    article :global(ul) {
+        @apply list-outside list-disc my-10 ms-5;
+    }
+    article :global(li) {
+        @apply mb-3;
+    }
+    article :global(li > p) {
+        @apply ms-5;
+    }
+    article :global(a) {
+        @apply underline underline-offset-auto break-all;
+    }
+    article :global(p) {
+        @apply my-6;
+    }
+    article :global(img) {
+        @apply indent-0 rounded-xl w-10/12 my-10 mx-auto;
+    }
+    article :global(code) {
+        @apply relative text-white p-1 mx-1 text-sm bg-gray-700 rounded-lg px-3;
+    }
+    article :global(pre) {
+        @apply p-5 my-10 rounded-lg flex overflow-x-auto;
+    }
+    article :global(pre > code) {
+        @apply px-0 flex-none w-10;
+    }
+    article :global(table) {
+        @apply mx-auto my-10 text-sm sm:text-base;
+    }
+    article :global(tr) {
+        @apply border-b border-gray-500;
+    }
+    article :global(td) {
+        @apply py-5 px-5;
+    }
+    article :global(tbody) {
+        @apply grow;
+    }
+</style>

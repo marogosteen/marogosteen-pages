@@ -1,0 +1,10 @@
+services:
+  app:
+    image: marogosteen-pages:latest
+    container_name: marogosteen-pages
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces/marogosteen-pages:cached
+    command: sleep infinity

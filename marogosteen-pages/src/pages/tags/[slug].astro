@@ -1,0 +1,32 @@
+---
+import Layout from "@layouts/Base.astro";
+import PostList from "@components/PostList.svelte";
+import { CollectionEntry, getCollection } from "astro:content";
+import getTagCountMap from "@utils/getUniqueTags";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog", ({ data }) => !data.draft);
+    const tags = getTagCountMap(posts);
+    const tagResult = Array.from(tags.keys()).map((tagName) => ({
+        params: { slug: tagName },
+        props: {
+            posts: posts.filter((post) => {
+                return post.data.tags.includes(tagName);
+            }),
+            tagName: tagName,
+        },
+    }));
+    return [...tagResult];
+}
+
+export interface Props {
+    posts: CollectionEntry<"blog">[];
+    tagName: string;
+}
+
+let { posts, tagName } = Astro.props;
+---
+
+<Layout>
+    <PostList title={tagName} allPosts={posts} />
+</Layout>

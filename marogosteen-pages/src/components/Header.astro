@@ -1,0 +1,102 @@
+---
+---
+
+<header class="my-10">
+    <nav class="flex items-center">
+        <div class="grow">
+            <a href="/">
+                <h1 class="text-xl font-bold inline-block whitespace-nowrap">
+                    Marogosteen Pages
+                </h1>
+            </a>
+        </div>
+
+        <div
+            id="menu"
+            class="h-min absolute mt-10 inset-10 md:mt-0 md:static md:bg-inherit hidden md:block"
+        >
+            <div
+                class="flex justify-center rounded-3xl bg-gray-800 md:bg-inherit"
+            >
+                <div
+                    class="flex flex-col gap-x-12 gap-y-4 justify-self-center my-3 md:flex-row"
+                >
+                    <a href="/posts" class="menu-item">Posts</a>
+                    <a href="/tags" class="menu-item">Tags</a>
+                    <a href="/search" class="menu-item flex">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-search mt-auto mb-1 me-2 hidden sm:block"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                            ></path>
+                        </svg>
+                        Search
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <button id="menu-button" class="md:hidden">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="menu-icon"
+            >
+                <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
+                <line x1="3" y1="6" x2="21" y2="6" class="line"></line>
+                <line x1="12" y1="18" x2="21" y2="18" class="line"></line>
+                <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
+                <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+<style>
+    @reference "../styles/app.css";
+
+    .menu-item {
+        @apply text-xl font-semibold md:pt-0;
+    }
+    .menu-icon {
+        @apply inline-block w-7 h-7 stroke-current;
+    }
+    .menu-icon line {
+        @apply transition-opacity duration-75 ease-in-out;
+    }
+    .menu-icon .close {
+        opacity: 0;
+    }
+    .menu-icon.is-active .line {
+        opacity: 0%;
+    }
+    .menu-icon.is-active .close {
+        opacity: 100%;
+    }
+</style>
+
+<script>
+    const menuBtn = document.getElementById("menu-button");
+    const menuIcon = document.querySelector(".menu-icon");
+    const menu = document.getElementById("menu");
+
+    const toggleMenu = () => {
+        menuIcon?.classList.toggle("is-active");
+        menu?.classList.toggle("hidden");
+    };
+
+    menuBtn?.addEventListener("click", toggleMenu);
+</script>
