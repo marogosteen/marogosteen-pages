@@ -1,12 +1,12 @@
 ---
-title: 'Docker Desktop の代替案としてMultipass デビューする、そんなあなたへ捧げる手順書。'
+title: 'Docker Desktop の代替案としてMultipass デビューする、そんなあなたへ捧げる手順書'
 publicDate: 2023-07-27
 updateDate: 2023-08-04
 postSlug: '20230727-multipass'
 tags: 
     - 'Docker'
     - 'Multipass'
-description: '2022年1月31日より Docker Desktop は有料化した。そんなこんなで、これは Docker に関わらず、 Multipass デビューするあなたへ捧げる手順書としてここに残す。'
+description: '2022年1月31日より Docker Desktop は有料化した。そんなこんなで、これは Docker に関わらず、 Multipass デビューするあなたへ捧げる手順書としてここに残す'
 draft: false
 ---
 

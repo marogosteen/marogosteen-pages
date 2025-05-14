@@ -1,12 +1,12 @@
 ---
-title: "Astro + Svelteで検索機能追加した。"
+title: "Astro + Svelteで検索機能追加した"
 publicDate: 2023-06-27
 updateDate: 2023-06-27
 postSlug: "20230621-add_search_feature"
 tags:
     - "Astro"
     - "Svelte"
-description: "このブログのpost検索機能としてAstro+Svelteで実装したみた。"
+description: "このブログのpost検索機能としてAstro+Svelteで実装したみた"
 draft: false
 ---
 

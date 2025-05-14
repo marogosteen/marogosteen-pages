@@ -1,12 +1,12 @@
 ---
-title: 'WONDER KAMIに掲載されました。'
+title: 'WONDER KAMIに掲載されました'
 publicDate: 2023-11-30
 updateDate: 2023-11-30
 postSlug: '20231130-wonder_kami'
 tags: 
     - '雑記'
     - '古民家'
-description: '香美町移住支援サイト「WONDER KAMI」に掲載されました。'
+description: '香美町移住支援サイト「WONDER KAMI」に掲載されました'
 draft: false
 ---
 

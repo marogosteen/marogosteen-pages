@@ -6,7 +6,7 @@ postSlug: "20230621-use_cloud-init_in_terraform"
 tags:
   - "Terraform"
   - "Google Cloud"
-description: "Terraform で cloud-init を使う術を探すのに苦労したので、備忘録。"
+description: "Terraform で cloud-init を使う術を探すのに苦労したので備忘録を残す"
 draft: false
 ---
 
