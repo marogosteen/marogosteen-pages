@@ -48,7 +48,7 @@ Dev Containers は凄く便利なので、使ってない人は是非使って�
 ## Containerを作る
 
 1. 作業ディレクトリを開いて、リモートエクスプローラーからOpen Current Folder in Containerを選択。
-    ![create_container](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2022/create_container.png)
+    ![create_container](https://marogosteen.dev/2022/create_container.png)
 
     Ubuntu の次に Python(latest) を選択すると Container が作られる（ちょっと時間かかる)。
 
@@ -71,12 +71,12 @@ Dev Containers は凄く便利なので、使ってない人は是非使って�
 
 
 3. 左下からリモートウィンドウを開いて container を rebuild。
-    ![rebuild_devcontainer](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2022/rebuild.png)
+    ![rebuild_devcontainer](https://marogosteen.dev/2022/rebuild.png)
 
 4. nvidia-smi で再度確認。
     - nvidia-smi
 
-    ![check_build_devcontainer](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2022/check_build_devcontainer.png)
+    ![check_build_devcontainer](https://marogosteen.dev/2022/check_build_devcontainer.png)
 
 
 ## 参考

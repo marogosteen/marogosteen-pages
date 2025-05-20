@@ -23,9 +23,9 @@ draft: false
 
 その古民家はこんな感じ。天気が良ければ庭で仕事してる。家と蔵と車庫付き。
 
-![古民家](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2023/kominka-house.png)
-![庭](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2023/kominka-niwa.png)
-![畑](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2023/kominka-hatake.png)
+![古民家](https://marogosteen.dev/2023/kominka-house.png)
+![庭](https://marogosteen.dev/2023/kominka-niwa.png)
+![畑](https://marogosteen.dev/2023/kominka-hatake.png)
 
 ちなみに100万円もしていない。
 

@@ -15,8 +15,8 @@ draft: false
 
 さてさて。移住前に移住先を調査するわけだけど。情報源として見ていた、香美町移住支援サイト [WONDER KAMI](https://kamicho-ijyu.com/) に取材とその内容の[記事](https://kamicho-ijyu.com/thejunk/)を掲載していただいた。ありがたいことに、取材中に撮影した画像を使って良いとのことなので、さここでも香美町の宣伝に協力したいと思う。
 
-![marogosteen](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2023/wonder_kami-maro.png)
+![marogosteen](https://marogosteen.dev/2023/wonder_kami-maro.png)
 
 インタビューでも触れてるけど、調査は Notion に表形式で各物件とそれぞれの点数を友達と付けていた。（その表を載せようと思っていたんだけど、消してしまっていた。）比較的に香美町の物件の評価が高かったが、特に今住んでいる物件の条件が良かった。これらの情報はほとんどこの WONDER KAMI に載っているので、香美町移住を検討している方はここを見るのは必須だと思う。こっち[記事](https://marogosteen.dev/posts/20230616-Im-kominka-engineer/)でも移住のヒントを残しているので、興味があれば見てみると良いかも。
 
-![the junk](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2023/wonder_kami-the_junk.png)
+![the junk](https://marogosteen.dev/2023/wonder_kami-the_junk.png)
