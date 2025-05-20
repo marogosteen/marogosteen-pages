@@ -10,7 +10,7 @@ description: "このブログのpost検索機能としてAstro+Svelteで実装�
 draft: false
 ---
 
-[前回](https://marogosteen-pages.web.app/posts/20230621-remake_my_blog/)のやり残しに書いた Post の検索機能を Svelte で実装した。
+Post の検索機能を Svelte で実装した。
 
 先に Astro blog 戦記について書けやって声が聞こえますが、自分的にとってリアルタイムな話なので、先にこっちを。。。
 

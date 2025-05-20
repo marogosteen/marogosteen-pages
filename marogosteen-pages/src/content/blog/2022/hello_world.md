@@ -15,4 +15,4 @@ draft: false
 
 技術ブログを始めようと思ってからかなりの時が経ってしまったが、残す大切さを感じたのでようやく最初の一歩を踏み出してみる。
 
-![profile](https://pub-84d41e6313b44efba113a9c7376726ba.r2.dev/2022/awaji_drone.png)
+![profile](https://bucket.marogosteen.dev/2022/awaji_drone.png)
