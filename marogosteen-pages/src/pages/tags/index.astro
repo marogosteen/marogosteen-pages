@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Base.astro";
 import { getCollection } from "astro:content";
-import getTagCountMap from "@utils/getUniqueTags";
+import getTagCountMap from "@libs/getUniqueTags";
 
 const posts = await getCollection("blog");
 const tags = getTagCountMap(posts);

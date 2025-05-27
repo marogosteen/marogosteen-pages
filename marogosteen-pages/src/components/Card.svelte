@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { CollectionEntry } from "astro:content";
-    import dateToString from "@utils/dateToString";
+    import dateToString from "@libs/dateToString";
 
     export let post: CollectionEntry<"blog">;
 </script>

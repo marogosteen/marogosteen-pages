@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { CollectionEntry } from "astro:content";
     import Card from "./Card.svelte";
-    import getSortedPosts from "@utils/getSortedPosts";
+    import getSortedPosts from "@libs/getSortedPosts";
 
     export let year: number;
     export let posts: CollectionEntry<"blog">[];

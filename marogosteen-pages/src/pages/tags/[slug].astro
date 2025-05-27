@@ -2,7 +2,7 @@
 import Layout from "@layouts/Base.astro";
 import PostList from "@components/PostList.svelte";
 import { CollectionEntry, getCollection } from "astro:content";
-import getTagCountMap from "@utils/getUniqueTags";
+import getTagCountMap from "@libs/getUniqueTags";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog", ({ data }) => !data.draft);
