@@ -20,6 +20,8 @@ Astro による v5.0 への Upgrade guides はこちら。
 
 [Upgrade to Astro v5](https://docs.astro.build/ja/guides/upgrade-to/v5/)
 
+## Contents
+
 ## Markdown コレクションエントリにて、layout フィールドがサポートされなくなった
 
 以下は、Astro 5.0 の Upgrade guides の [Legacy: v2.0 Content Collections API](https://docs.astro.build/en/guides/upgrade-to/v5/#legacy-v20-content-collections-api) から抜粋したもの。

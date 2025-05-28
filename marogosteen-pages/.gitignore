@@ -1,3 +1,5 @@
+.yarn/
+
 # build output
 dist/
 # generated types

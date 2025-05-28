@@ -1,8 +1,8 @@
 <script lang="ts">
     import type { CollectionEntry } from "astro:content";
     import PostsByYear from "./PostsByYear.svelte";
-    import getSortedPosts from "@utils/getSortedPosts";
-    import getPostsByYearMap from "@utils/getPostsByYearMap";
+    import getSortedPosts from "@libs/getSortedPosts";
+    import getPostsByYearMap from "@libs/getPostsByYearMap";
 
     export let allPosts: CollectionEntry<"blog">[];
 
