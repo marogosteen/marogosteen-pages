@@ -157,6 +157,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.24.5":
+  version: 7.27.3
+  resolution: "@babel/runtime@npm:7.27.3"
+  checksum: 10c0/b860fe374a36fddbeeb238e52e59443abcacc046eebda1bf278bffbc67b5c8f713b939e09c126b086ca5f97cba1987ea17fd1737568bc50fedb1f6ef1cf46f69
+  languageName: node
+  linkType: hard
+
 "@babel/types@npm:^7.25.4, @babel/types@npm:^7.26.10":
   version: 7.26.10
   resolution: "@babel/types@npm:7.26.10"
@@ -1170,6 +1177,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remark-embedder/core@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@remark-embedder/core@npm:3.0.3"
+  dependencies:
+    "@babel/runtime": "npm:^7.24.5"
+    "@types/hast": "npm:^3.0.4"
+    "@types/mdast": "npm:^4.0.4"
+    hast-util-from-parse5: "npm:^8.0.1"
+    parse5: "npm:^7.1.2"
+    unified: "npm:^11.0.4"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/ad013a6470ae5926ce57e23594ebd9568ebe9ceb47dcac41900ad8915d91ddfd18898253fca1052c3574351e2c92f250d8d0d8fa98e43a127589155f855a1456
+  languageName: node
+  linkType: hard
+
+"@remark-embedder/transformer-oembed@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@remark-embedder/transformer-oembed@npm:5.0.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.24.5"
+  peerDependencies:
+    "@remark-embedder/core": ^3.0.0
+  checksum: 10c0/cf73a79801cbacdc3923cb37d9e668d1d59ed493aa715249752e2442e5c197c4d7b7ba16e74e8efc41ee48a7b83d376ae793083e49944bf461d073ce552812b0
+  languageName: node
+  linkType: hard
+
 "@rollup/pluginutils@npm:^5.1.4":
   version: 5.1.4
   resolution: "@rollup/pluginutils@npm:5.1.4"
@@ -1667,7 +1700,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mdast@npm:^4.0.0":
+"@types/mdast@npm:^4.0.0, @types/mdast@npm:^4.0.4":
   version: 4.0.4
   resolution: "@types/mdast@npm:4.0.4"
   dependencies:
@@ -3605,6 +3638,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"entities@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "entities@npm:6.0.0"
+  checksum: 10c0/b82a7bd5de282860f3c36a91e815e41e874fd036c83956a568b82729678492eb088359d6f7e0a4f5c00776427263fcba04959b8340fefa430c39b9bce770427e
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -4883,7 +4923,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-from-parse5@npm:^8.0.0":
+"hast-util-from-parse5@npm:^8.0.0, hast-util-from-parse5@npm:^8.0.1":
   version: 8.0.3
   resolution: "hast-util-from-parse5@npm:8.0.3"
   dependencies:
@@ -6174,6 +6214,8 @@ __metadata:
     "@astrojs/cloudflare": "npm:12.5.1"
     "@astrojs/svelte": "npm:7.0.11"
     "@cloudflare/workers-types": "npm:^4.20250422.0"
+    "@remark-embedder/core": "npm:^3.0.3"
+    "@remark-embedder/transformer-oembed": "npm:^5.0.1"
     "@tailwindcss/vite": "npm:^4.0.14"
     astro: "npm:5.7.5"
     bootstrap-icons: "npm:^1.11.3"
@@ -7622,6 +7664,15 @@ __metadata:
   dependencies:
     entities: "npm:^4.5.0"
   checksum: 10c0/829d37a0c709215a887e410a7118d754f8e1afd7edb529db95bc7bbf8045fb0266a7b67801331d8e8d9d073ea75793624ec27ce9ff3b96862c3b9008f4d68e80
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^7.1.2":
+  version: 7.3.0
+  resolution: "parse5@npm:7.3.0"
+  dependencies:
+    entities: "npm:^6.0.0"
+  checksum: 10c0/7fd2e4e247e85241d6f2a464d0085eed599a26d7b0a5233790c49f53473232eb85350e8133344d9b3fd58b89339e7ad7270fe1f89d28abe50674ec97b87f80b5
   languageName: node
   linkType: hard
 
