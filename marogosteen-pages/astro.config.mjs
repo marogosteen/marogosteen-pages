@@ -8,7 +8,9 @@ export default defineConfig({
   integrations: [svelte()],
 
   markdown: {
-    remarkPlugins: [[remarkToc, { heading: "contents" }]],
+    remarkPlugins: [
+      [remarkToc, { heading: "contents" }]
+    ],
   },
 
   vite: {
