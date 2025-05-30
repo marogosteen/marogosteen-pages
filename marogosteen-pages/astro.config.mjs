@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import svelte from "@astrojs/svelte";
 import remarkToc from 'remark-toc'
+import remarkOEmbed from 'remark-oembed';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +10,8 @@ export default defineConfig({
 
   markdown: {
     remarkPlugins: [
-      [remarkToc, { heading: "contents" }]
+      [remarkToc, { heading: "contents" }],
+      [remarkOEmbed, { syncWidget: true }]
     ],
   },
 

@@ -18,6 +18,7 @@
     "astro": "5.7.5",
     "bootstrap-icons": "^1.11.3",
     "firebase-tools": "^13.34.0",
+    "remark-oembed": "^1.2.2",
     "remark-toc": "^9.0.0",
     "svelte": "^5.25.6",
     "tailwindcss": "^4.0.14",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250422.0",
+    "@types/remark-oembed": "^1",
     "wrangler": "^4.12.0"
   },
   "packageManager": "yarn@4.9.1"
