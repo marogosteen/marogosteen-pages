@@ -1,3 +1,3 @@
 # Marogosteen-Pages
 
-[marogosteen-pages](https://marogosteen-pages.web.app)
+[marogosteen-pages](https://marogosteen.dev)
